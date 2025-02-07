@@ -8,5 +8,6 @@ void settings()
 
 void draw()
 {
+  background(150);
   ShowTitle();
 }
