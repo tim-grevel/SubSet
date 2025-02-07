@@ -7,6 +7,11 @@ void settings()
   size(SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
+void setup()
+{
+  InitializeCards();
+}
+
 void draw()
 {
   background(BACKGROUND_COLOR);
