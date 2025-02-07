@@ -6,11 +6,11 @@ void DrawText(String text, int textX, int textY, int alignX, int alignY, int tex
   text(text, textX, textY);
 }
 
-void DrawRectangle(int rectMode, int rectX, int rectY, int rectWidth, int rectHeight, int cornerRadius, int rectColorHex)
+void DrawRectangle(int rectMode, int rectX, int rectY, int rectWidth, int rectHeight, int rectRadius, int rectColorHex)
 {
   rectMode(rectMode);
   fill(rectColorHex);
-  rect(rectX, rectY, rectWidth, rectHeight, cornerRadius);
+  rect(rectX, rectY, rectWidth, rectHeight, rectRadius);
 }
 
 void DrawEllipse(int ellipseMode, int ellipseX, int ellipseY, int ellipseWidth, int ellipseHeight, int ellipseColorHex)

@@ -1,5 +1,6 @@
 final int SCREEN_WIDTH = 1600; 
 final int SCREEN_HEIGHT = 800;
+final int BACKGROUND_COLOR = #333333;
 
 void settings()
 {
@@ -8,6 +9,15 @@ void settings()
 
 void draw()
 {
-  background(150);
-  ShowTitle();
+  background(BACKGROUND_COLOR);
+  
+  switch(currentScreen)
+  {
+   case TITLE_SCREEN:
+     ShowTitleScreen();
+   break;
+   case GAME_SCREEN:
+     ShowGameScreen();
+   break;
+  }
 }

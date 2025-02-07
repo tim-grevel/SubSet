@@ -1,7 +1,7 @@
-void DrawRectButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int cornerRadius, int buttonColor)
+void DrawRectButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int rectRadius, int buttonColor)
 {
   int buttonDrawMode = CENTER;
-  DrawRectangle(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, cornerRadius, buttonColor);
+  DrawRectangle(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, rectRadius, buttonColor);
   DrawText(buttonText, buttonX, buttonY, buttonDrawMode, buttonDrawMode, textSize, textColor);
 }
 
@@ -12,12 +12,12 @@ void DrawEllipseButton(String buttonText, int textSize, int textColor, int butto
   DrawText(buttonText, buttonX, buttonY, buttonDrawMode, buttonDrawMode, textSize, textColor);
 }
 
-boolean ButtonOnRect(int rectX, int rectY, int rectWidth, int rectHeight)
+boolean MouseOnRect(int rectX, int rectY, int rectWidth, int rectHeight)
 {
   return mouseX >= rectX && mouseX <= rectX + rectWidth && mouseY >= rectY && mouseY <= rectY + rectHeight;
 }
 
-boolean ButtonOnEllipse(int ellipseX, int ellipseY, int ellipseDiameter)
+boolean MouseOnEllipse(int ellipseX, int ellipseY, int ellipseDiameter)
 {
   return (sqrt(sq(ellipseX - mouseX) + sq(ellipseY - mouseY)) < ellipseDiameter / 2);
 }
