@@ -41,3 +41,33 @@ void CardsAreSet(String[] cardCodes)
 {
   
 }
+
+char[][] ShuffleCards(char[][] cards)
+{
+  char[][] newCards = new char[cards.length][cards[0].length];
+  
+  IntList cardIndexes = new IntList();
+  
+  for (int i = 0; i < cards.length; i++)
+  {
+    cardIndexes.append(i);
+  }
+  
+  cardIndexes.shuffle();
+  
+  for (int i = 0; i < cardIndexes.size(); i++)
+  {
+    newCards[i] = cards[cardIndexes.get(i)];
+  }
+  
+  return newCards;
+}
+
+void PrintCards(char[][] cards)
+{
+  for (int i = 0; i < cards.length; i++)
+  {
+    println(i + ": ");
+    printArray(cards[i]);
+  }
+}
