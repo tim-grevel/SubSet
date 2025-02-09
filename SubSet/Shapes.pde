@@ -1,23 +1,23 @@
 // Shape counts //<>//
-final char SHAPE_COUNT_ONE = '1';
-final char SHAPE_COUNT_TWO = '2';
-final char SHAPE_COUNT_THREE = '3';
-final char[] SHAPE_COUNTS = {SHAPE_COUNT_ONE, SHAPE_COUNT_TWO, SHAPE_COUNT_THREE};
+final int SHAPE_COUNT_ONE = 0;
+final int SHAPE_COUNT_TWO = 1;
+final int SHAPE_COUNT_THREE = 2;
+final IntList SHAPE_COUNTS = new IntList(1, 2, 3);
 
 // Shape colors
-final char SHAPE_COLOR_RED = 'R';
-final char SHAPE_COLOR_GREEN = 'G';
-final char SHAPE_COLOR_BLUE = 'B';
-final char[] SHAPE_COLORS = {SHAPE_COLOR_RED, SHAPE_COLOR_GREEN, SHAPE_COLOR_BLUE};
+final int SHAPE_COLOR_RED = 0;
+final int SHAPE_COLOR_GREEN = 1;
+final int SHAPE_COLOR_BLUE = 2;
+final IntList SHAPE_COLORS = new IntList(#FF0000, #00FF00, #0000FF);
 
 // Shape transparency
-final char SHAPE_TRANSPARENCY_SOLID = 'S';
-final char SHAPE_TRANSPARENCY_TRANSLUCENT = 'T';
-final char SHAPE_TRANSPARENCY_OPEN = 'O';
-final char[] SHAPE_TRANSPARENCIES = {SHAPE_TRANSPARENCY_SOLID, SHAPE_TRANSPARENCY_TRANSLUCENT, SHAPE_TRANSPARENCY_OPEN};
+final int SHAPE_TRANSPARENCY_SOLID = 0;
+final int SHAPE_TRANSPARENCY_TRANSLUCENT = 1;
+final int SHAPE_TRANSPARENCY_OPEN = 2;
+final IntList SHAPE_TRANSPARENCIES = new IntList(0, 128, 255);
 
 // Shape types
-final char SHAPE_TYPE_DIAMOND = 'D';
-final char SHAPE_TYPE_OVAL = 'O';
-final char SHAPE_TYPE_RECTANGLE = 'R';
-final char[] SHAPE_TYPES = {SHAPE_TYPE_DIAMOND, SHAPE_TYPE_OVAL, SHAPE_TYPE_RECTANGLE};
+final int SHAPE_TYPE_DIAMOND = 0;
+final int SHAPE_TYPE_OVAL = 1;
+final int SHAPE_TYPE_RECTANGLE = 2;
+final StringList SHAPE_TYPES = new StringList("Diamond", "Oval", "Rectangle");

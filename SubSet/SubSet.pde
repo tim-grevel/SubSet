@@ -10,6 +10,8 @@ void settings()
 void setup()
 {
   InitializeCards();
+  
+  PrintCards(cards);
 }
 
 void draw()
