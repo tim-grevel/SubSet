@@ -1,27 +1,27 @@
 final int INDEX_COUNT = 0;
 final int INDEX_COLOR = 1;
-final int INDEX_SHADING = 2;
+final int INDEX_TRANSPARENCY = 2;
 final int INDEX_TYPE = 3;
 
-char[][] cards = new char[0][4];
+int[][] cards = new int[0][4];
 
 void InitializeCards()
 {
-  for (int a = 0; a < SHAPE_COUNTS.length; a++)
+  for (int a = 0; a < SHAPE_COUNTS.size(); a++)
   {
-    for (int b = 0; b < SHAPE_COLORS.length; b++)
+    for (int b = 0; b < SHAPE_COLORS.size(); b++)
     {
-      for (int c = 0; c < SHAPE_TRANSPARENCIES.length; c++)
+      for (int c = 0; c < SHAPE_TRANSPARENCIES.size(); c++)
       {
-        for (int d = 0; d < SHAPE_TYPES.length; d++)
+        for (int d = 0; d < SHAPE_TYPES.size(); d++)
         {
-          char[] newCard = new char[4];
-          newCard[INDEX_COUNT] = SHAPE_COUNTS[a];
-          newCard[INDEX_COLOR] = SHAPE_COLORS[b];
-          newCard[INDEX_SHADING] = SHAPE_TRANSPARENCIES[c];
-          newCard[INDEX_TYPE] = SHAPE_TYPES[d];
+          int[] newCard = new int[4];
+          newCard[INDEX_COUNT] = a;
+          newCard[INDEX_COLOR] = b;
+          newCard[INDEX_TRANSPARENCY] = c;
+          newCard[INDEX_TYPE] = d;
           
-          char[][] newCards = new char[cards.length + 1][4];
+          int[][] newCards = new int[cards.length + 1][4];
           
           for (int i = 0; i < cards.length; i++)
           {
@@ -42,9 +42,9 @@ void CardsAreSet(String[] cardCodes)
   
 }
 
-char[][] ShuffleCards(char[][] cards)
+int[][] ShuffleCards(int[][] cards)
 {
-  char[][] newCards = new char[cards.length][cards[0].length];
+  int[][] newCards = new int[cards.length][cards[0].length];
   
   IntList cardIndexes = new IntList();
   
@@ -63,7 +63,7 @@ char[][] ShuffleCards(char[][] cards)
   return newCards;
 }
 
-void PrintCards(char[][] cards)
+void PrintCards(int[][] cards)
 {
   for (int i = 0; i < cards.length; i++)
   {

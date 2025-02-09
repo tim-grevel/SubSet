@@ -1,8 +1,11 @@
-char[][] gameCards;
+int[][] gameCards;
 
 void ShowGameScreen()
 {
-  DrawCard(cards[69], width/2, height/2);
+  DrawCard(cards[0], width/2, height/2);
+  DrawCard(cards[1], width/3, height/2);
+  DrawCard(cards[2], width/4, height/2);
+  DrawCard(cards[3], width/6, height/2);
 }
 
 void StartGame()
