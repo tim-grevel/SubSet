@@ -1,4 +1,4 @@
-// Shape counts //<>// //<>//
+// Shape counts //<>//
 final char SHAPE_COUNT_ONE = '1';
 final char SHAPE_COUNT_TWO = '2';
 final char SHAPE_COUNT_THREE = '3';
@@ -10,11 +10,11 @@ final char SHAPE_COLOR_GREEN = 'G';
 final char SHAPE_COLOR_BLUE = 'B';
 final char[] SHAPE_COLORS = {SHAPE_COLOR_RED, SHAPE_COLOR_GREEN, SHAPE_COLOR_BLUE};
 
-// Shape shading
-final char SHAPE_SHADING_SOLID = 'S';
-final char SHAPE_SHADING_TRANSLUCENT = 'T';
-final char SHAPE_SHADING_OPEN = 'O';
-final char[] SHAPE_SHADINGS = {SHAPE_SHADING_SOLID, SHAPE_SHADING_TRANSLUCENT, SHAPE_SHADING_OPEN};
+// Shape transparency
+final char SHAPE_TRANSPARENCY_SOLID = 'S';
+final char SHAPE_TRANSPARENCY_TRANSLUCENT = 'T';
+final char SHAPE_TRANSPARENCY_OPEN = 'O';
+final char[] SHAPE_TRANSPARENCIES = {SHAPE_TRANSPARENCY_SOLID, SHAPE_TRANSPARENCY_TRANSLUCENT, SHAPE_TRANSPARENCY_OPEN};
 
 // Shape types
 final char SHAPE_TYPE_DIAMOND = 'D';

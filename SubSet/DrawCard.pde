@@ -2,8 +2,8 @@ final int CARD_WIDTH = 150;
 final int CARD_HEIGHT = 200;
 final int CARD_RADIUS = 10;
 
-final float SHAPE_WIDTH = CARD_WIDTH / 1.5;
-final float SHAPE_HEIGHT = CARD_HEIGHT / 5;
+final int SHAPE_WIDTH = CARD_WIDTH * 10 / 15;
+final int SHAPE_HEIGHT = CARD_HEIGHT / 5;
 
 final int[] SHAPE_OFFSETS = {-60, -30, 0, 30, 60};
 
@@ -18,4 +18,9 @@ void DrawCard(char[] card, int cardX, int cardY)
   
   // Draw card base
   DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, CARD_BASE_COLOR);
+  
+  for (int offset : SHAPE_OFFSETS)
+  {
+    DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, 10, 5, #FF0000);
+  }
 }
