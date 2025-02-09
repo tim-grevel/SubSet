@@ -14,7 +14,10 @@ void DrawEllipseButton(String buttonText, int textSize, int textColor, int butto
 
 boolean MouseOnRect(int rectX, int rectY, int rectWidth, int rectHeight)
 {
-  return mouseX >= rectX && mouseX <= rectX + rectWidth && mouseY >= rectY && mouseY <= rectY + rectHeight;
+  return mouseX >= rectX - rectWidth / 2
+      && mouseX <= rectX + rectWidth / 2
+      && mouseY >= rectY - rectHeight / 2
+      && mouseY <= rectY + rectHeight / 2;
 }
 
 boolean MouseOnEllipse(int ellipseX, int ellipseY, int ellipseDiameter)
