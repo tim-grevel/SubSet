@@ -26,3 +26,13 @@ void draw()
    break;
   }
 }
+
+void mouseClicked()
+{
+  switch(currentScreen)
+  {
+   case TITLE_SCREEN:
+     HandleTitleScreenButtons();
+   break;
+  }
+}
