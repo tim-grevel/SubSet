@@ -11,14 +11,14 @@ void InitializeCards()
   {
     for (int b = 0; b < SHAPE_COLORS.length; b++)
     {
-      for (int c = 0; c < SHAPE_SHADINGS.length; c++)
+      for (int c = 0; c < SHAPE_TRANSPARENCIES.length; c++)
       {
         for (int d = 0; d < SHAPE_TYPES.length; d++)
         {
           char[] newCard = new char[4];
           newCard[INDEX_COUNT] = SHAPE_COUNTS[a];
           newCard[INDEX_COLOR] = SHAPE_COLORS[b];
-          newCard[INDEX_SHADING] = SHAPE_SHADINGS[c];
+          newCard[INDEX_SHADING] = SHAPE_TRANSPARENCIES[c];
           newCard[INDEX_TYPE] = SHAPE_TYPES[d];
           
           char[][] newCards = new char[cards.length + 1][4];
