@@ -1,7 +1,17 @@
+boolean mouseOnStartButton;
+
 void ShowTitleScreen()
 {
   ShowTitle();
   ShowStartButton();
+}
+
+void HandleTitleScreenButtons()
+{
+  if (mouseOnStartButton)
+   {
+     SetScreen(GAME_SCREEN);
+   }
 }
 
 void ShowTitle()
@@ -31,6 +41,6 @@ void ShowStartButton()
   
   if (MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight))
   {
-    SetScreen(GAME_SCREEN);
+    mouseOnStartButton = true;
   }
 }
