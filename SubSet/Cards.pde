@@ -1,6 +1,6 @@
 final int INDEX_COUNT = 0;
 final int INDEX_COLOR = 1;
-final int INDEX_SHADING = 2;
+final int INDEX_TRANSPARENCY = 2;
 final int INDEX_TYPE = 3;
 
 int[][] cards = new int[0][4];
@@ -18,7 +18,7 @@ void InitializeCards()
           int[] newCard = new int[4];
           newCard[INDEX_COUNT] = a;
           newCard[INDEX_COLOR] = b;
-          newCard[INDEX_SHADING] = c;
+          newCard[INDEX_TRANSPARENCY] = c;
           newCard[INDEX_TYPE] = d;
           
           int[][] newCards = new int[cards.length + 1][4];
