@@ -2,7 +2,7 @@ char[][] gameCards;
 
 void ShowGameScreen()
 {
-  rect(width/2, height/2, 100, 100);
+  DrawCard(cards[0], width/2, height/2);
 }
 
 void StartGame()
