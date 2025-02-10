@@ -1,4 +1,4 @@
-// Shape counts //<>// //<>// //<>//
+// Shape counts //<>//
 final int SHAPE_COUNT_ONE = 0;
 final int SHAPE_COUNT_TWO = 1;
 final int SHAPE_COUNT_THREE = 2;
@@ -14,7 +14,7 @@ final IntList SHAPE_COLORS = new IntList(#FF0000, #00FF00, #0000FF);
 final int SHAPE_TRANSPARENCY_SOLID = 0;
 final int SHAPE_TRANSPARENCY_TRANSLUCENT = 1;
 final int SHAPE_TRANSPARENCY_OPEN = 2;
-final IntList SHAPE_TRANSPARENCIES = new IntList(0, 128, 255);
+final IntList SHAPE_TRANSPARENCIES = new IntList(255, 100, 0);
 
 // Shape types
 final int SHAPE_TYPE_DIAMOND = 0;

@@ -4,6 +4,7 @@ final int CARD_RADIUS = 10;
 
 final int SHAPE_WIDTH = CARD_WIDTH * 10 / 15;
 final int SHAPE_HEIGHT = CARD_HEIGHT / 5;
+final int SHAPE_BORDER_WEIGHT = 3;
 
 final int[] SHAPE_OFFSETS = {-60, -30, 0, 30, 60};
 
@@ -17,7 +18,7 @@ void DrawCard(int[] card, int cardX, int cardY)
   String shapeType = SHAPE_TYPES.get(card[INDEX_TYPE]);
   
   // Draw card base
-  DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, CARD_BASE_COLOR);
+  DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, CARD_BASE_COLOR, 255, 4);
     
   int offsetIndex = 3 - shapeCount;
   
@@ -28,13 +29,15 @@ void DrawCard(int[] card, int cardX, int cardY)
     switch(shapeType)
     {
       case "Rectangle":
-        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, 0, shapeColor);
+        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, 0, shapeColor, shapeTransparency, SHAPE_BORDER_WEIGHT);
       break;
       case "Oval":
-        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, shapeColor);
+        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, shapeColor, shapeTransparency, SHAPE_BORDER_WEIGHT);
       break;
       case "Diamond":
-        fill(shapeColor);
+        stroke(shapeColor);
+        strokeWeight(SHAPE_BORDER_WEIGHT);
+        fill(shapeColor, shapeTransparency);
         quad(
           // Left
           cardX - SHAPE_WIDTH / 2,

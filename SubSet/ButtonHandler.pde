@@ -1,14 +1,14 @@
-void DrawRectButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int rectRadius, int buttonColor)
+void DrawRectButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int rectRadius, int buttonColor,  int transparency, int strokeWeight)
 {
   int buttonDrawMode = CENTER;
-  DrawRectangle(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, rectRadius, buttonColor);
+  DrawRectangle(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, rectRadius, buttonColor, transparency, strokeWeight);
   DrawText(buttonText, buttonX, buttonY, buttonDrawMode, buttonDrawMode, textSize, textColor);
 }
 
-void DrawEllipseButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int buttonColor)
+void DrawEllipseButton(String buttonText, int textSize, int textColor, int buttonX, int buttonY, int buttonWidth, int buttonHeight, int buttonColor,  int transparency, int strokeWeight)
 {
   int buttonDrawMode = CENTER;
-  DrawEllipse(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, buttonColor);
+  DrawEllipse(buttonDrawMode, buttonX, buttonY, buttonWidth, buttonHeight, buttonColor, transparency, strokeWeight);
   DrawText(buttonText, buttonX, buttonY, buttonDrawMode, buttonDrawMode, textSize, textColor);
 }
 
