@@ -10,6 +10,7 @@ void settings()
 void setup()
 {
   InitializeCards();
+  gameCards = ShuffleCards(cards);
   
   //PrintCards(cards);
 }
