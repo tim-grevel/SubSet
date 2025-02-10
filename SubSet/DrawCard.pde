@@ -23,10 +23,37 @@ void DrawCard(int[] card, int cardX, int cardY)
   
   for (int i = 0; i < shapeCount; i++)
   {
-    println(offsetIndex);
-    
     int offset = SHAPE_OFFSETS[offsetIndex];
-    DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, shapeColor);
+    
+    switch(shapeType)
+    {
+      case "Rectangle":
+        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, 0, shapeColor);
+      break;
+      case "Oval":
+        DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, shapeColor);
+      break;
+      case "Diamond":
+        fill(shapeColor);
+        quad(
+          // Left
+          cardX - SHAPE_WIDTH / 2,
+          cardY + offset,
+          
+          // Top
+          cardX,
+          cardY + SHAPE_HEIGHT / 2 + offset,
+          
+          // Right
+          cardX + SHAPE_WIDTH / 2,
+          cardY + offset,
+          
+          // Bottom
+          cardX,
+          cardY - SHAPE_HEIGHT / 2 + offset
+        );
+      break;
+    }
     
     offsetIndex += 2;
   }
