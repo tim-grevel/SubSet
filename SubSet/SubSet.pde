@@ -11,7 +11,7 @@ void setup()
 {
   InitializeCards();
   
-  PrintCards(cards);
+  //PrintCards(cards);
 }
 
 void draw()
@@ -29,7 +29,7 @@ void draw()
   }
 }
 
-void mouseClicked()
+void mousePressed()
 {
   switch(currentScreen)
   {

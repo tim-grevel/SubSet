@@ -11,16 +11,28 @@ final int CARD_BASE_COLOR = #FFFFFF;
 
 void DrawCard(int[] card, int cardX, int cardY)
 {
-  int cardCount = SHAPE_COUNTS.get(card[INDEX_COUNT]);
-  int cardColor = SHAPE_COLORS.get(card[INDEX_COLOR]);
-  int cardTransparency = SHAPE_TRANSPARENCIES.get(card[INDEX_TRANSPARENCY]);
-  String cardType = SHAPE_TYPES.get(card[INDEX_TYPE]);
+  int shapeCount = SHAPE_COUNTS.get(card[INDEX_COUNT]);
+  int shapeColor = SHAPE_COLORS.get(card[INDEX_COLOR]);
+  int shapeTransparency = SHAPE_TRANSPARENCIES.get(card[INDEX_TRANSPARENCY]);
+  String shapeType = SHAPE_TYPES.get(card[INDEX_TYPE]);
   
   // Draw card base
   DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, CARD_BASE_COLOR);
+    
+  int offsetIndex = 3 - shapeCount;
   
-  for (int offset : SHAPE_OFFSETS)
+  for (int i = 0; i < shapeCount; i++)
   {
-    DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, cardColor);
+    println(offsetIndex);
+    
+    int offset = SHAPE_OFFSETS[offsetIndex];
+    DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, shapeColor);
+    
+    offsetIndex += 2;
   }
+  
+  //for (int offset : SHAPE_OFFSETS)
+  //{
+  //  DrawRectangle(CENTER, cardX, cardY + offset, SHAPE_WIDTH, SHAPE_HEIGHT, SHAPE_HEIGHT / 2, cardColor);
+  //}
 }
