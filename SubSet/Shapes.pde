@@ -1,4 +1,4 @@
-// Shape counts //<>//
+// Shape counts //<>// //<>// //<>//
 final int SHAPE_COUNT_ONE = 0;
 final int SHAPE_COUNT_TWO = 1;
 final int SHAPE_COUNT_THREE = 2;
