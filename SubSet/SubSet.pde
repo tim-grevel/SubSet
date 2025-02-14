@@ -31,7 +31,7 @@ void draw()
   }
 }
 
-void mousePressed()
+void mouseClicked()
 {
   switch(currentScreen)
   {
