@@ -39,8 +39,5 @@ void ShowStartButton()
   
   DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
   
-  if (MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight))
-  {
-    mouseOnStartButton = true;
-  }
+  mouseOnStartButton = MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
