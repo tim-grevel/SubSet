@@ -11,7 +11,7 @@ void setup()
 {
   InitializeCards();
   cardsInPile = ShuffleCards(cardsInDeck);
-  InitializeGrid(GRID_ROWS, GRID_COLUMNS);
+  GenerateGrid(GRID_ROWS, GRID_COLUMNS);
   
   //PrintCards(cards);
 }
@@ -37,6 +37,9 @@ void mousePressed()
   {
    case TITLE_SCREEN:
      HandleTitleScreenButtons();
+   break;
+   case GAME_SCREEN:
+   
    break;
   }
 }

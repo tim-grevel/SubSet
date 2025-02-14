@@ -43,11 +43,6 @@ void InitializeCards()
   }
 }
 
-void CardsAreSet(String[] cardCodes)
-{
-  
-}
-
 ArrayList<int[]> ShuffleCards(ArrayList<int[]> cardsToShuffle)
 {
   Collections.shuffle(cardsToShuffle);
