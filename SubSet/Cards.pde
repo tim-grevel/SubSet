@@ -7,7 +7,7 @@ final int INDEX_TYPE = 3;
 
 final int SHAPE_PROPERTY_COUNT = 4;
 
-ArrayList<int[]> cards = new ArrayList<int[]>();;
+ArrayList<int[]> cardsInDeck = new ArrayList<int[]>();
 
 void InitializeCards()
 {
@@ -25,7 +25,7 @@ void InitializeCards()
           newCard[INDEX_TRANSPARENCY] = c;
           newCard[INDEX_TYPE] = d;
           
-          cards.add(newCard);
+          cardsInDeck.add(newCard);
           
           //int[][] newCards = new int[cards.length + 1][4];
           

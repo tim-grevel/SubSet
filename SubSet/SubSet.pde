@@ -10,7 +10,8 @@ void settings()
 void setup()
 {
   InitializeCards();
-  gameCards = ShuffleCards(cards);
+  cardsInPile = ShuffleCards(cardsInDeck);
+  InitializeGrid(GRID_ROWS, GRID_COLUMNS);
   
   //PrintCards(cards);
 }
