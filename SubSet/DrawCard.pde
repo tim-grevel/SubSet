@@ -9,16 +9,19 @@ final int SHAPE_BORDER_WEIGHT = 3;
 final int[] SHAPE_OFFSETS = {-60, -30, 0, 30, 60};
 
 final int CARD_BASE_COLOR = #FFFFFF;
+final int CARD_SELECTED_BASE_COLOR = #AAAAAA;
 
-void DrawCard(int[] card, int cardX, int cardY)
+void DrawCard(int[] card, int cardX, int cardY, boolean selected)
 {
   int shapeCount = SHAPE_COUNTS.get(card[INDEX_COUNT]);
   int shapeColor = SHAPE_COLORS.get(card[INDEX_COLOR]);
   int shapeTransparency = SHAPE_TRANSPARENCIES.get(card[INDEX_TRANSPARENCY]);
   String shapeType = SHAPE_TYPES.get(card[INDEX_TYPE]);
   
+  int cardBaseColor = selected ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR ;
+  
   // Draw card base
-  DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, CARD_BASE_COLOR, 255, 4);
+  DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, cardBaseColor, 255, 4);
     
   int offsetIndex = 3 - shapeCount;
   

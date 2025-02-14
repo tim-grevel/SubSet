@@ -10,8 +10,6 @@ void settings()
 void setup()
 {
   InitializeCards();
-  cardsInPile = ShuffleCards(cardsInDeck);
-  GenerateGrid(GRID_ROWS, GRID_COLUMNS);
   
   //PrintCards(cards);
 }
@@ -31,7 +29,7 @@ void draw()
   }
 }
 
-void mouseClicked()
+void mousePressed()
 {
   switch(currentScreen)
   {
@@ -39,7 +37,7 @@ void mouseClicked()
      HandleTitleScreenButtons();
    break;
    case GAME_SCREEN:
-   
+     HandleCardSelection();
    break;
   }
 }
