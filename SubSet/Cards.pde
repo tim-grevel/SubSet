@@ -1,9 +1,13 @@
+import java.util.Collections;
+
 final int INDEX_COUNT = 0;
 final int INDEX_COLOR = 1;
 final int INDEX_TRANSPARENCY = 2;
 final int INDEX_TYPE = 3;
 
-int[][] cards = new int[0][4];
+final int SHAPE_PROPERTY_COUNT = 4;
+
+ArrayList<int[]> cards = new ArrayList<int[]>();;
 
 void InitializeCards()
 {
@@ -15,22 +19,24 @@ void InitializeCards()
       {
         for (int d = 0; d < SHAPE_TYPES.size(); d++)
         {
-          int[] newCard = new int[4];
+          int[] newCard = new int[SHAPE_PROPERTY_COUNT];
           newCard[INDEX_COUNT] = a;
           newCard[INDEX_COLOR] = b;
           newCard[INDEX_TRANSPARENCY] = c;
           newCard[INDEX_TYPE] = d;
           
-          int[][] newCards = new int[cards.length + 1][4];
+          cards.add(newCard);
           
-          for (int i = 0; i < cards.length; i++)
-          {
-            newCards[i] = cards[i];
-          }
+          //int[][] newCards = new int[cards.length + 1][4];
           
-          newCards[cards.length] = newCard;
+          //for (int i = 0; i < cards.length; i++)
+          //{
+          //  newCards[i] = cards[i];
+          //}
           
-          cards = newCards;
+          //newCards[cards.length] = newCard;
+          
+          //cards = newCards;
         }
       }
     }
@@ -42,25 +48,27 @@ void CardsAreSet(String[] cardCodes)
   
 }
 
-int[][] ShuffleCards(int[][] cards)
+ArrayList<int[]> ShuffleCards(ArrayList<int[]> cardsToShuffle)
 {
-  int[][] newCards = new int[cards.length][cards[0].length];
+  Collections.shuffle(cardsToShuffle);
+  return cardsToShuffle;
+  //int[][] newCards = new int[cards.length][cards[0].length];
   
-  IntList cardIndexes = new IntList();
+  //IntList cardIndexes = new IntList();
   
-  for (int i = 0; i < cards.length; i++)
-  {
-    cardIndexes.append(i);
-  }
+  //for (int i = 0; i < cards.length; i++)
+  //{
+  //  cardIndexes.append(i);
+  //}
   
-  cardIndexes.shuffle();
+  //cardIndexes.shuffle();
   
-  for (int i = 0; i < cardIndexes.size(); i++)
-  {
-    newCards[i] = cards[cardIndexes.get(i)];
-  }
+  //for (int i = 0; i < cardIndexes.size(); i++)
+  //{
+  //  newCards[i] = cards[cardIndexes.get(i)];
+  //}
   
-  return newCards;
+  //return newCards;
 }
 
 void PrintCards(int[][] cards)
