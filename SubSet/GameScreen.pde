@@ -7,14 +7,14 @@ ArrayList<int[]> gameGrid;
 
 void ShowGameScreen()
 {
-  gameGrid = GenerateGrid(GRID_ROWS, GRID_COLUMNS);
-  DrawCardsOnGrid(gameGrid, cardsOnScreen, selectedCards);
 }
 
 void StartGame()
 {
   cardsInPile = ShuffleCards(cardsInDeck);
   cardsOnScreen = cardsInPile;
+  UpdateGrid();
+  DrawCardsOnGrid(gameGrid, cardsOnScreen, selectedCards);
 }
 
 void HandleCardSelection()
@@ -37,4 +37,18 @@ void HandleCardSelection()
       }
     }
   }
+  
+  DrawCards();
+}
+
+void DrawCards()
+{
+  background(BACKGROUND_COLOR);
+  DrawCardsOnGrid(gameGrid, cardsOnScreen, selectedCards);
+}
+
+void UpdateGrid()
+{
+  background(BACKGROUND_COLOR);
+  gameGrid = GenerateGrid(GRID_ROWS, GRID_COLUMNS);
 }
