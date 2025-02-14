@@ -1,5 +1,4 @@
-ArrayList<int[]> gameCards;
-ArrayList<int[]> boardCards;
+
 
 void ShowGameScreen()
 {
@@ -19,20 +18,4 @@ void ShowGameScreen()
 void StartGame()
 {
   gameCards = ShuffleCards(cards);
-}
-
-void MoveCards(int[][] cards, int amount)
-{
-  for (int i = amount; i > 0; i--)
-  {
-    
-  }
-}
-
-void MoveCards(int[][] from, int[][] to, int[] indexes)
-{
-  for (int index : indexes)
-  {
-    
-  }
 }
