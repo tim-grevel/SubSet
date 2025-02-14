@@ -11,13 +11,13 @@ void setup()
 {
   InitializeCards();
   
+  background(BACKGROUND_COLOR);
+  
   //PrintCards(cards);
 }
 
 void draw()
-{
-  background(BACKGROUND_COLOR);
-  
+{  
   switch(currentScreen)
   {
    case TITLE_SCREEN:
