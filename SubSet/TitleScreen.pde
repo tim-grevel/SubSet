@@ -11,6 +11,7 @@ void HandleTitleScreenButtons()
   if (mouseOnStartButton)
    {
      SetScreen(GAME_SCREEN);
+     StartGame();
    }
 }
 

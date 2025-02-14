@@ -5,5 +5,5 @@ int currentScreen = TITLE_SCREEN;
 
 void SetScreen(int newScreen)
 {
- currentScreen = newScreen; 
+  currentScreen = newScreen; 
 }
