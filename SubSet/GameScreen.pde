@@ -5,8 +5,11 @@ IntList selectedCards = new IntList();
 
 ArrayList<int[]> gameGrid;
 
+int score = 0;
+
 void ShowGameScreen()
 {
+
 }
 
 void StartGame()
@@ -14,7 +17,8 @@ void StartGame()
   cardsInPile = ShuffleCards(cardsInDeck);
   cardsOnScreen = cardsInPile;
   UpdateGrid();
-  DrawCardsOnGrid(gameGrid, cardsOnScreen, selectedCards);
+  DrawCards();
+  DrawScore();
 }
 
 void HandleCardSelection()
@@ -34,11 +38,28 @@ void HandleCardSelection()
       else
       {
         selectedCards.append(i);
+        if (selectedCards.size() == 3)
+        {
+          ArrayList<int[]> setCards = new ArrayList<int[]>();
+          
+          for (int index : selectedCards)
+          {
+            setCards.add(cardsOnScreen.get(index));
+          }
+          
+          if (CardsAreSet(setCards))
+          {
+            score++;
+          }
+          
+          selectedCards.clear();
+        }
       }
     }
   }
   
   DrawCards();
+  DrawScore();
 }
 
 void DrawCards()
@@ -51,4 +72,11 @@ void UpdateGrid()
 {
   background(BACKGROUND_COLOR);
   gameGrid = GenerateGrid(GRID_ROWS, GRID_COLUMNS);
+}
+
+void DrawScore()
+{
+  fill(#FFFFFF);
+  textAlign(CENTER, CENTER);
+  text(score, 20, 20);
 }
