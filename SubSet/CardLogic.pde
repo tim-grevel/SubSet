@@ -15,9 +15,12 @@ ArrayList<int[]> TakeFromPile(ArrayList<int[]> pile, int amount)
 {
   ArrayList<int[]> cardsTaken = new ArrayList<int[]>();
   
-  for (int i = max(pile.size() - amount, 0); i < pile.size(); i++)
+  int finalIndex = max(pile.size() - amount, 0);
+  
+  for (int i = pile.size() - 1; i >= finalIndex; i--) 
   {
     cardsTaken.add(pile.get(i));
+    pile.remove(i);
   }
   
   return cardsTaken;

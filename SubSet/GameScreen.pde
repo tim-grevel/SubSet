@@ -15,7 +15,7 @@ void ShowGameScreen()
 void StartGame()
 {
   cardsInPile = ShuffleCards(cardsInDeck);
-  cardsOnScreen = cardsInPile;
+  cardsOnScreen = TakeFromPile(cardsInPile, 12);
   UpdateGrid();
   DrawCards();
   DrawScore();
