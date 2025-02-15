@@ -41,3 +41,12 @@ void mousePressed()
    break;
   }
 }
+
+void keyPressed()
+{
+  if (key == ' ')
+  {
+    cardsOnScreen = ShuffleCards(cardsOnScreen);
+    DrawCards();
+  }
+}
