@@ -1,5 +1,3 @@
-import java.util.Collections;
-
 final int INDEX_COUNT = 0;
 final int INDEX_COLOR = 1;
 final int INDEX_TRANSPARENCY = 2;
@@ -45,25 +43,25 @@ void InitializeCards()
 
 ArrayList<int[]> ShuffleCards(ArrayList<int[]> cardsToShuffle)
 {
-  Collections.shuffle(cardsToShuffle);
-  return cardsToShuffle;
-  //int[][] newCards = new int[cards.length][cards[0].length];
+  //Collections.shuffle(cardsToShuffle);
+  //return cardsToShuffle;
+  ArrayList<int[]> newCards = new ArrayList<int[]>();
   
-  //IntList cardIndexes = new IntList();
+  IntList cardIndexes = new IntList();
   
-  //for (int i = 0; i < cards.length; i++)
-  //{
-  //  cardIndexes.append(i);
-  //}
+  for (int i = 0; i < cardsToShuffle.size(); i++)
+  {
+    cardIndexes.append(i);
+  }
   
-  //cardIndexes.shuffle();
+  cardIndexes.shuffle();
   
-  //for (int i = 0; i < cardIndexes.size(); i++)
-  //{
-  //  newCards[i] = cards[cardIndexes.get(i)];
-  //}
+  for (int index : cardIndexes)
+  {
+    newCards.add(cardsToShuffle.get(index));
+  }
   
-  //return newCards;
+  return newCards;
 }
 
 void PrintCards(int[][] cards)

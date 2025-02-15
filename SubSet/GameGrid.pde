@@ -42,8 +42,11 @@ void DrawCardsOnGrid(ArrayList<int[]> grid, ArrayList<int[]> cards, IntList sele
 {
   for (int i = 0; i < grid.size(); i++)
   {
-    int[] coords = grid.get(i);
-    DrawCard(cards.get(i), coords[INDEX_GRID_X], coords[INDEX_GRID_Y], selectedCardIndexes.hasValue(i));
+    if (i < cards.size())
+    {
+      int[] coords = grid.get(i);
+      DrawCard(cards.get(i), coords[INDEX_GRID_X], coords[INDEX_GRID_Y], selectedCardIndexes.hasValue(i));
+    }
   }
   
   //for (int i = 0; i < cards.size(); i++)

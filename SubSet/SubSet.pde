@@ -46,7 +46,15 @@ void keyPressed()
 {
   if (key == ' ')
   {
-    cardsOnScreen = ShuffleCards(cardsOnScreen);
+    cardsInPile = ShuffleCards(cardsInDeck);
+    cardsOnScreen.clear();
+    cardsOnScreen.addAll(TakeFromPile(cardsInPile, 12));
+    DrawCards();
+  }
+  
+  if (key == ENTER)
+  {
+    cardsOnScreen.addAll(TakeFromPile(cardsInPile, 3));
     DrawCards();
   }
 }
