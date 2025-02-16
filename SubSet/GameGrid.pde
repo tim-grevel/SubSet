@@ -1,12 +1,3 @@
-final int GRID_ROWS = 3;
-final int GRID_COLUMNS = 7;
-
-final int GRID_GAP_X = 20;
-final int GRID_GAP_Y = 20;
-
-final int INDEX_GRID_X = 0;
-final int INDEX_GRID_Y = 1;
-
 ArrayList<int[]> GenerateGrid(int rowCount, int columnCount)
 {
   ArrayList<int[]> grid = new ArrayList<int[]>();
@@ -45,7 +36,7 @@ void DrawCardsOnGrid(ArrayList<int[]> grid, ArrayList<int[]> cards, IntList sele
     if (i < cards.size())
     {
       int[] coords = grid.get(i);
-      DrawCard(cards.get(i), coords[INDEX_GRID_X], coords[INDEX_GRID_Y], selectedCardIndexes.hasValue(i));
+      DrawCard(cards.get(i), coords[0], coords[1], selectedCardIndexes.hasValue(i));
     }
   }
   

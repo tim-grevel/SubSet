@@ -1,10 +1,3 @@
-final int INDEX_COUNT = 0;
-final int INDEX_COLOR = 1;
-final int INDEX_TRANSPARENCY = 2;
-final int INDEX_TYPE = 3;
-
-final int SHAPE_PROPERTY_COUNT = 4;
-
 ArrayList<int[]> cardsInDeck = new ArrayList<int[]>();
 
 void InitializeCards()
@@ -17,11 +10,11 @@ void InitializeCards()
       {
         for (int d = 0; d < SHAPE_TYPES.size(); d++)
         {
-          int[] newCard = new int[SHAPE_PROPERTY_COUNT];
-          newCard[INDEX_COUNT] = a;
-          newCard[INDEX_COLOR] = b;
-          newCard[INDEX_TRANSPARENCY] = c;
-          newCard[INDEX_TYPE] = d;
+          int[] newCard = new int[4];
+          newCard[NUMBER] = a;
+          newCard[COLOR] = b;
+          newCard[OPACITY] = c;
+          newCard[SHAPE] = d;
           
           cardsInDeck.add(newCard);
           

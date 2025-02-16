@@ -1,22 +1,9 @@
-final int CARD_WIDTH = 150;
-final int CARD_HEIGHT = 200;
-final int CARD_RADIUS = 10;
-
-final int SHAPE_WIDTH = CARD_WIDTH * 10 / 15;
-final int SHAPE_HEIGHT = CARD_HEIGHT / 5;
-final int SHAPE_BORDER_WEIGHT = 3;
-
-final int[] SHAPE_OFFSETS = {-60, -30, 0, 30, 60};
-
-final int CARD_BASE_COLOR = #FFFFFF;
-final int CARD_SELECTED_BASE_COLOR = #AAAAAA;
-
 void DrawCard(int[] card, int cardX, int cardY, boolean selected)
 {
-  int shapeCount = SHAPE_COUNTS.get(card[INDEX_COUNT]);
-  int shapeColor = SHAPE_COLORS.get(card[INDEX_COLOR]);
-  int shapeTransparency = SHAPE_TRANSPARENCIES.get(card[INDEX_TRANSPARENCY]);
-  String shapeType = SHAPE_TYPES.get(card[INDEX_TYPE]);
+  int shapeCount = SHAPE_COUNTS.get(card[NUMBER]);
+  int shapeColor = SHAPE_COLORS.get(card[COLOR]);
+  int shapeTransparency = SHAPE_TRANSPARENCIES.get(card[OPACITY]);
+  String shapeType = SHAPE_TYPES.get(card[SHAPE]);
   
   int cardBaseColor = selected ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR ;
   
