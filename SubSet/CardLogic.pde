@@ -28,7 +28,7 @@ ArrayList<int[]> TakeFromPile(ArrayList<int[]> pile, int amount)
 
 boolean CardsAreSet(ArrayList<int[]> cards)
 {
-  for (int i = 0; i < SHAPE_PROPERTY_COUNT; i++)
+  for (int i = 0; i < 4; i++)
   {
     // Create HashSet to store each property value
     // HashSet is used for flexibility in number of cards or properties

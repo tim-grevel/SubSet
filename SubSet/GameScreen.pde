@@ -26,8 +26,8 @@ void HandleCardSelection()
   for (int i = 0; i < gameGrid.size(); i++)
   {
     int[] coordinate = gameGrid.get(i);
-    int cardX = coordinate[INDEX_GRID_X];
-    int cardY = coordinate[INDEX_GRID_Y];
+    int cardX = coordinate[0];
+    int cardY = coordinate[1];
 
     if (MouseOnRect(cardX, cardY, CARD_WIDTH, CARD_HEIGHT))
     {
@@ -71,7 +71,7 @@ void DrawCards()
 void UpdateGrid()
 {
   background(BACKGROUND_COLOR);
-  gameGrid = GenerateGrid(GRID_ROWS, GRID_COLUMNS);
+  gameGrid = GenerateGrid(GRID_ROWS, cardsOnScreen.size() / GRID_ROWS);
 }
 
 void DrawScore()
