@@ -1,14 +1,17 @@
-void DrawCard(int[] card, int cardX, int cardY, boolean selected)
+void DrawCard(int index, int cardX, int cardY)
 {
   int shapeCount = SHAPE_COUNTS.get(card[NUMBER]);
   int shapeColor = SHAPE_COLORS.get(card[COLOR]);
   int shapeTransparency = SHAPE_TRANSPARENCIES.get(card[OPACITY]);
   String shapeType = SHAPE_TYPES.get(card[SHAPE]);
   
-  int cardBaseColor = selected ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR ;
+  int cardBaseColor = selected[index] ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR;
   
   // Draw card base
   DrawRectangle(CENTER, cardX, cardY, CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS, cardBaseColor, 255, 4);
+  
+  // Set color for shapes
+  fill(colors[index], opacities[index]);
     
   int offsetIndex = 3 - shapeCount;
   

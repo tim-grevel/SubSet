@@ -1,37 +1,45 @@
-ArrayList<int[]> cardsInDeck = new ArrayList<int[]>();
+//ArrayList<int[]> cardsInDeck = new ArrayList<int[]>();
 
 void InitializeCards()
 {
-  for (int a = 0; a < SHAPE_COUNTS.size(); a++)
+  for (int i = 0; i < 81; i++)
   {
-    for (int b = 0; b < SHAPE_COLORS.size(); b++)
-    {
-      for (int c = 0; c < SHAPE_TRANSPARENCIES.size(); c++)
-      {
-        for (int d = 0; d < SHAPE_TYPES.size(); d++)
-        {
-          int[] newCard = new int[4];
-          newCard[NUMBER] = a;
-          newCard[COLOR] = b;
-          newCard[OPACITY] = c;
-          newCard[SHAPE] = d;
-          
-          cardsInDeck.add(newCard);
-          
-          //int[][] newCards = new int[cards.length + 1][4];
-          
-          //for (int i = 0; i < cards.length; i++)
-          //{
-          //  newCards[i] = cards[i];
-          //}
-          
-          //newCards[cards.length] = newCard;
-          
-          //cards = newCards;
-        }
-      }
-    }
+    numbers[i] = i % 3;
+    opacities[i] = (i / 3) % 3;
+    colors[i] = (i / 9) % 3;
+    shapes[i] = (i / 27) % 3;
   }
+  
+  //for (int n = 0; n < SHAPE_COUNTS.size(); n++)
+  //{
+  //  for (int o = 0; o < SHAPE_COLORS.size(); o++)
+  //  {
+  //    for (int c = 0; c < SHAPE_TRANSPARENCIES.size(); c++)
+  //    {
+  //      for (int s = 0; s < SHAPE_TYPES.size(); s++)
+  //      {
+  //        int[] newCard = new int[4];
+  //        newCard[NUMBER] = n;
+  //        newCard[COLOR] = o;
+  //        newCard[OPACITY] = c;
+  //        newCard[SHAPE] = s;
+          
+  //        cardsInDeck.add(newCard);
+          
+  //        //int[][] newCards = new int[cards.length + 1][4];
+          
+  //        //for (int i = 0; i < cards.length; i++)
+  //        //{
+  //        //  newCards[i] = cards[i];
+  //        //}
+          
+  //        //newCards[cards.length] = newCard;
+          
+  //        //cards = newCards;
+  //      }
+  //    }
+  //  }
+  //}
 }
 
 ArrayList<int[]> ShuffleCards(ArrayList<int[]> cardsToShuffle)

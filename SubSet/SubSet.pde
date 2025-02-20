@@ -1,6 +1,7 @@
 void settings()
 {
   size(SCREEN_WIDTH, SCREEN_HEIGHT);
+  fullScreen();
 }
 
 void setup()
@@ -45,12 +46,14 @@ void keyPressed()
     cardsInPile = ShuffleCards(cardsInDeck);
     cardsOnScreen.clear();
     cardsOnScreen.addAll(TakeFromPile(cardsInPile, 12));
+      UpdateGrid();
     DrawCards();
   }
   
   if (key == ENTER)
   {
     cardsOnScreen.addAll(TakeFromPile(cardsInPile, 3));
+    UpdateGrid();
     DrawCards();
   }
 }

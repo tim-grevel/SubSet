@@ -1,9 +1,19 @@
-ArrayList<int[]> cardsInPile;
-ArrayList<int[]> cardsOnScreen;
+int[] numbers = new int[81];
+int[] opacities = new int[81];
+int[] colors = new int[81];
+int[] shapes = new int[81];
+boolean[] used = new boolean[81];
 
-IntList selectedCards = new IntList();
+IntList shown = new IntList();
+IntList selected = new IntList();
+IntList playOrder = new IntList();
 
-ArrayList<int[]> gameGrid;
+//ArrayList<int[]> cardsInPile;
+//ArrayList<int[]> cardsOnScreen;
+
+//IntList selectedCards = new IntList();
+
+//ArrayList<int[]> gameGrid;
 
 int score = 0;
 
