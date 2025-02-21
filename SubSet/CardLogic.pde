@@ -1,49 +1,26 @@
-import java.util.HashSet;
-
-ArrayList<int[]> MoveCards(ArrayList<int[]> src, ArrayList<int[]> dest, int[] srcIndexes)
+void TakeFromPile(int amount)
 {
-  for (int index : srcIndexes)
+  while (amount > 0)
   {
-    dest.add(src.get(index));
-    src.remove(index);
+    if (playOrder.size() == 0) return;
+    int card = playOrder.get(0);
+    playOrder.remove(0);
+    shown.append(card);
+    amount--;
   }
-  
-  return dest;
 }
 
-ArrayList<int[]> TakeFromPile(ArrayList<int[]> pile, int amount)
+boolean CardsAreSet(int card1, int card2, int card3)
 {
-  ArrayList<int[]> cardsTaken = new ArrayList<int[]>();
-  
-  int finalIndex = max(pile.size() - amount, 0);
-  
-  for (int i = pile.size() - 1; i >= finalIndex; i--) 
-  {
-    cardsTaken.add(pile.get(i));
-    pile.remove(i);
-  }
-  
-  return cardsTaken;
-}
-
-boolean CardsAreSet(ArrayList<int[]> cards)
-{
-  for (int i = 0; i < 4; i++)
-  {
-    // Create HashSet to store each property value
-    // HashSet is used for flexibility in number of cards or properties
-    HashSet<Integer> set = new HashSet<>();
-    for (int[] card : cards)
-    {
-      set.add(card[i]);
-    }
-    // The size of a HashSet is the number of unique items
-    if (set.size() != 1 && set.size() != 3)
-    {
-      // Size of 2 means all values were neither equal nor inequal
-      return false;
-    }
-  }
-  // If false was not returned in the code above the cards are a set
+  // If any of the attributes are not all the same or all different, the cards are not a set
+  if (!AttributesAreSet(numbers  , card1, card2, card3)) return false;
+  if (!AttributesAreSet(colors   , card1, card2, card3)) return false;
+  if (!AttributesAreSet(opacities, card1, card2, card3)) return false;
+  if (!AttributesAreSet(shapes   , card1, card2, card3)) return false;
   return true;
+}
+
+boolean AttributesAreSet(int[] attributeValues, int card1, int card2, int card3)
+{
+  return ((attributeValues[card1] + attributeValues[card2] + attributeValues[card3]) % 3 == 0);
 }

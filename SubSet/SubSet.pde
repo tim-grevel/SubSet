@@ -1,6 +1,6 @@
 void settings()
 {
-  size(SCREEN_WIDTH, SCREEN_HEIGHT);
+  size(SCREEN_WIDTH, SCREEN_HEIGHT);  
 }
 
 void setup()
@@ -8,8 +8,6 @@ void setup()
   InitializeCards();
   
   background(BACKGROUND_COLOR);
-  
-  //PrintCards(cards);
 }
 
 void draw()
@@ -40,17 +38,18 @@ void mousePressed()
 
 void keyPressed()
 {
-  if (key == ' ')
+  switch(currentScreen)
   {
-    cardsInPile = ShuffleCards(cardsInDeck);
-    cardsOnScreen.clear();
-    cardsOnScreen.addAll(TakeFromPile(cardsInPile, 12));
-    DrawCards();
-  }
-  
-  if (key == ENTER)
-  {
-    cardsOnScreen.addAll(TakeFromPile(cardsInPile, 3));
-    DrawCards();
+   case GAME_SCREEN:
+    if (key == ' ')
+    {
+      StartGame();
+    }
+    
+    if (key == ENTER)
+    {
+      // Add 3 cards to the shown cards
+    }
+   break;
   }
 }

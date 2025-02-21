@@ -1,67 +1,10 @@
-ArrayList<int[]> cardsInDeck = new ArrayList<int[]>();
-
 void InitializeCards()
 {
-  for (int a = 0; a < SHAPE_COUNTS.size(); a++)
+  for (int i = 0; i < 81; i++)
   {
-    for (int b = 0; b < SHAPE_COLORS.size(); b++)
-    {
-      for (int c = 0; c < SHAPE_TRANSPARENCIES.size(); c++)
-      {
-        for (int d = 0; d < SHAPE_TYPES.size(); d++)
-        {
-          int[] newCard = new int[4];
-          newCard[NUMBER] = a;
-          newCard[COLOR] = b;
-          newCard[OPACITY] = c;
-          newCard[SHAPE] = d;
-          
-          cardsInDeck.add(newCard);
-          
-          //int[][] newCards = new int[cards.length + 1][4];
-          
-          //for (int i = 0; i < cards.length; i++)
-          //{
-          //  newCards[i] = cards[i];
-          //}
-          
-          //newCards[cards.length] = newCard;
-          
-          //cards = newCards;
-        }
-      }
-    }
-  }
-}
-
-ArrayList<int[]> ShuffleCards(ArrayList<int[]> cardsToShuffle)
-{
-  //Collections.shuffle(cardsToShuffle);
-  //return cardsToShuffle;
-  ArrayList<int[]> newCards = new ArrayList<int[]>();
-  
-  IntList cardIndexes = new IntList();
-  
-  for (int i = 0; i < cardsToShuffle.size(); i++)
-  {
-    cardIndexes.append(i);
-  }
-  
-  cardIndexes.shuffle();
-  
-  for (int index : cardIndexes)
-  {
-    newCards.add(cardsToShuffle.get(index));
-  }
-  
-  return newCards;
-}
-
-void PrintCards(int[][] cards)
-{
-  for (int i = 0; i < cards.length; i++)
-  {
-    println(i + ": ");
-    printArray(cards[i]);
+    numbers[i] = i % 3;
+    colors[i] = (i / 3) % 3;
+    opacities[i] = (i / 9) % 3;
+    shapes[i] = (i / 27) % 3;
   }
 }
