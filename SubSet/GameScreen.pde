@@ -1,6 +1,8 @@
-void ShowGameScreen()
+void DrawGameScreen()
 {
-
+  background(BACKGROUND_COLOR);
+  gameGrid = DrawCards(GRID_ROWS, shown.size() / GRID_ROWS);
+  DrawScore();
 }
 
 void StartGame()
@@ -8,8 +10,7 @@ void StartGame()
   ResetGame();
   SetPlayOrder();
   TakeFromPile(12);
-  UpdateCards();
-  DrawScore();
+  DrawGameScreen();
 }
 
 void ResetGame()
@@ -55,14 +56,7 @@ void HandleCardSelection()
     }
   }
   
-  UpdateCards();
-  DrawScore();
-}
-
-void UpdateCards()
-{
-  background(BACKGROUND_COLOR);
-  gameGrid = DrawCards(GRID_ROWS, shown.size() / GRID_ROWS);
+  DrawGameScreen();
 }
 
 void DrawScore()

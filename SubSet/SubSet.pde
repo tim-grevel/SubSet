@@ -17,9 +17,6 @@ void draw()
    case TITLE_SCREEN:
      ShowTitleScreen();
    break;
-   case GAME_SCREEN:
-     ShowGameScreen();
-   break;
   }
 }
 
@@ -46,9 +43,10 @@ void keyPressed()
       StartGame();
     }
     
-    if (key == ENTER)
+    if (key == 'h')
     {
-      // Add 3 cards to the shown cards
+      TakeFromPile(3);
+      DrawGameScreen();
     }
    break;
   }
