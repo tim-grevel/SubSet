@@ -1,22 +1,3 @@
-int[] numbers = new int[81];
-int[] colors = new int[81];
-int[] opacities = new int[81];
-int[] shapes = new int[81];
-boolean[] used = new boolean[81];
-
-IntList shown = new IntList();
-IntList selected = new IntList();
-IntList playOrder = new IntList();
-
-//ArrayList<int[]> cardsInPile;
-//ArrayList<int[]> cardsOnScreen;
-
-//IntList selectedCards = new IntList();
-
-ArrayList<int[]> gameGrid = new ArrayList<int[]>();
-
-int score = 0;
-
 void ShowGameScreen()
 {
 
