@@ -1,13 +1,17 @@
-void TakeFromPile(int amount)
+int TotalSetsInList(IntList cards)
 {
-  while (amount > 0)
+  int count = 0;
+  for (int i = 0; i < cards.size(); i++)
   {
-    if (playOrder.size() == 0) return;
-    int card = playOrder.get(0);
-    playOrder.remove(0);
-    shown.append(card);
-    amount--;
+    for (int j = i + 1; j < cards.size(); j++)
+    {
+      for (int k = j + 1; k < cards.size(); k++)
+      {
+        if (CardsAreSet(cards.get(i), cards.get(j), cards.get(k))) count++;
+      }
+    }
   }
+  return count;
 }
 
 boolean CardsAreSet(int card1, int card2, int card3)

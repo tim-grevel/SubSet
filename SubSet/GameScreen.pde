@@ -2,7 +2,7 @@ void DrawGameScreen()
 {
   background(BACKGROUND_COLOR);
   gameGrid = DrawCards(GRID_ROWS, shown.size() / GRID_ROWS);
-  DrawScore();
+  DrawStats();
 }
 
 void StartGame()
@@ -24,11 +24,12 @@ void ResetGame()
   }
 }
 
-void DrawScore()
+void DrawStats()
 {
-  fill(#FFFFFF);
-  textAlign(CENTER, CENTER);
-  text(score, 20, 20);
+  fill(0);
+  textAlign(LEFT, TOP);
+  text("Score: " + score, 20, 20);
+  text("Sets on screen: " + TotalSetsInList(shown), 20, 60);
 }
 
 
