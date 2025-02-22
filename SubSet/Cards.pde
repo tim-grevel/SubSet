@@ -11,6 +11,7 @@ void InitializeCards()
 
 void TakeFromPile(int amount)
 {
+  if (shown.size() + amount > 21) return;
   while (amount > 0)
   {
     if (playOrder.size() == 0) return;
