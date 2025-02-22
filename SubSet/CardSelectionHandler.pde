@@ -22,6 +22,11 @@ void HandleCardSelection()
           if (CardsAreSet(selected.get(0), selected.get(1), selected.get(2)))
           {
             score++;
+            
+            for (int card : selected)
+            {
+              shown.removeValue(card);
+            }
           }
           
           selected.clear();
