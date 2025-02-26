@@ -28,3 +28,18 @@ boolean AttributesAreSet(int[] attributeValues, int card1, int card2, int card3)
 {
   return ((attributeValues[card1] + attributeValues[card2] + attributeValues[card3]) % 3 == 0);
 }
+
+void SetPlayOrder()
+{
+  // Ensure playOrder is initialized
+  playOrder = new IntList();
+  
+  // Add index for every card
+  for (int i = 0; i < 81; i++)
+  {
+    playOrder.append(i);
+  }
+  
+  // Shuffle to create random card dealing order
+  playOrder.shuffle();
+}

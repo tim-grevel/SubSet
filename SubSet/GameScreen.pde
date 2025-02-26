@@ -26,24 +26,12 @@ void ResetGame()
 
 void DrawStats()
 {
-  fill(0);
-  textAlign(LEFT, TOP);
-  text("Score: " + score, 20, 20);
-  text("Sets on screen: " + TotalSetsInList(shown), 20, 60);
-}
-
-
-void SetPlayOrder()
-{
-  // Ensure playOrder is initialized
-  playOrder = new IntList();
+  fill(255);
+  textSize(50);
   
-  // Add index for every card
-  for (int i = 0; i < 81; i++)
-  {
-    playOrder.append(i);
-  }
+  textAlign(LEFT, BOTTOM);
+  text("Score: " + score, 20, height - 20);
   
-  // Shuffle to create random card dealing order
-  playOrder.shuffle();
+  textAlign(RIGHT, BOTTOM);
+  text(TotalSetsInList(shown) + " sets on screen", width - 20, height - 20);
 }
