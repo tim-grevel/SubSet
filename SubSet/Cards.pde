@@ -8,3 +8,16 @@ void InitializeCards()
     shapes[i] = (i / 27) % 3;
   }
 }
+
+void TakeFromPile(int amount)
+{
+  if (shown.size() + amount > 21) return;
+  while (amount > 0)
+  {
+    if (playOrder.size() == 0) return;
+    int card = playOrder.get(0);
+    playOrder.remove(0);
+    shown.append(card);
+    amount--;
+  }
+}

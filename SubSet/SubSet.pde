@@ -1,6 +1,6 @@
 void settings()
 {
-  size(SCREEN_WIDTH, SCREEN_HEIGHT);  
+  size(SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
 void setup()
@@ -8,19 +8,13 @@ void setup()
   InitializeCards();
   
   background(BACKGROUND_COLOR);
+  
+  DrawScreen(TITLE_SCREEN);
 }
 
 void draw()
 {  
-  switch(currentScreen)
-  {
-   case TITLE_SCREEN:
-     ShowTitleScreen();
-   break;
-   case GAME_SCREEN:
-     ShowGameScreen();
-   break;
-  }
+
 }
 
 void mousePressed()
@@ -46,9 +40,10 @@ void keyPressed()
       StartGame();
     }
     
-    if (key == ENTER)
+    if (key == 'h')
     {
-      // Add 3 cards to the shown cards
+      TakeFromPile(3);
+      DrawGameScreen();
     }
    break;
   }

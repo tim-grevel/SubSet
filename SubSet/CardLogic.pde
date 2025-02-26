@@ -1,13 +1,17 @@
-void TakeFromPile(int amount)
+int TotalSetsInList(IntList cards)
 {
-  while (amount > 0)
+  int count = 0;
+  for (int i = 0; i < cards.size(); i++)
   {
-    if (playOrder.size() == 0) return;
-    int card = playOrder.get(0);
-    playOrder.remove(0);
-    shown.append(card);
-    amount--;
+    for (int j = i + 1; j < cards.size(); j++)
+    {
+      for (int k = j + 1; k < cards.size(); k++)
+      {
+        if (CardsAreSet(cards.get(i), cards.get(j), cards.get(k))) count++;
+      }
+    }
   }
+  return count;
 }
 
 boolean CardsAreSet(int card1, int card2, int card3)
@@ -23,4 +27,19 @@ boolean CardsAreSet(int card1, int card2, int card3)
 boolean AttributesAreSet(int[] attributeValues, int card1, int card2, int card3)
 {
   return ((attributeValues[card1] + attributeValues[card2] + attributeValues[card3]) % 3 == 0);
+}
+
+void SetPlayOrder()
+{
+  // Ensure playOrder is initialized
+  playOrder = new IntList();
+  
+  // Add index for every card
+  for (int i = 0; i < 81; i++)
+  {
+    playOrder.append(i);
+  }
+  
+  // Shuffle to create random card dealing order
+  playOrder.shuffle();
 }
