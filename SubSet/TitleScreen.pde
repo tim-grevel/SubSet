@@ -1,21 +1,19 @@
-boolean mouseOnStartButton;
-
-void ShowTitleScreen()
+void DrawTitleScreen()
 {
-  ShowTitle();
-  ShowStartButton();
+  DrawTitle();
+  DrawStartButton(true);
 }
 
 void HandleTitleScreenButtons()
 {
-  if (mouseOnStartButton)
+  if (DrawStartButton(false))
    {
      SetScreen(GAME_SCREEN);
      StartGame();
    }
 }
 
-void ShowTitle()
+void DrawTitle()
 {
   String titleText = "SubSet";
   int titleX = width / 2;
@@ -26,7 +24,8 @@ void ShowTitle()
   DrawText(titleText, titleX, titleY, CENTER, CENTER, titleSize, titleColor);
 }
 
-void ShowStartButton()
+// Return whether the mouse is on the button
+boolean DrawStartButton(boolean renderButton)
 {
   String startText = "Start game";
   int textSize = 30;
@@ -38,7 +37,10 @@ void ShowStartButton()
   int buttonRadius = 0;
   int buttonColor = #555555;
   
-  DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+  if (renderButton)
+  {
+    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+  }
   
-  mouseOnStartButton = MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
+  return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
