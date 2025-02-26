@@ -4,7 +4,7 @@ void DrawTitleScreen()
   DrawStartButton(true);
 }
 
-void HandleTitleScreenButtons()
+void TitleScreenMousePressed()
 {
   if (DrawStartButton(false))
    {

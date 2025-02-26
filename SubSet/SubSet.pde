@@ -22,10 +22,10 @@ void mousePressed()
   switch(currentScreen)
   {
    case TITLE_SCREEN:
-     HandleTitleScreenButtons();
+     TitleScreenMousePressed();
    break;
    case GAME_SCREEN:
-     HandleCardSelection();
+     GameScreenMousePressed();
    break;
   }
 }
