@@ -12,3 +12,6 @@ IntList playOrder = new IntList();
 ArrayList<int[]> gameGrid = new ArrayList<int[]>();
 
 int score = 0;
+
+// Keeps track of the current screen the user is on
+int currentScreen = TITLE_SCREEN;

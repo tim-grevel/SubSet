@@ -8,16 +8,13 @@ void setup()
   InitializeCards();
   
   background(BACKGROUND_COLOR);
+  
+  DrawScreen(TITLE_SCREEN);
 }
 
 void draw()
 {  
-  switch(currentScreen)
-  {
-   case TITLE_SCREEN:
-     ShowTitleScreen();
-   break;
-  }
+
 }
 
 void mousePressed()
