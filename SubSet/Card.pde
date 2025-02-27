@@ -1,38 +1,3 @@
-// This method draws all on-screen cards in a grid
-ArrayList<int[]> DrawCards(int rowCount, int columnCount)
-{
-  ArrayList<int[]> grid = new ArrayList<int[]>();
-  
-  // Calculate position of top left card
-  int gridStartingX = (width - CARD_WIDTH * columnCount - GRID_GAP_X * (columnCount - 1)) / 2 + CARD_WIDTH / 2;
-  int gridStartingY = 0 + CARD_HEIGHT / 2;
-  
-  // Declare new variables for incrementing
-  int gridX = gridStartingX;
-  int gridY = gridStartingY;
-  int cardIndex = 0;
-  
-  // Draw card on each position in the grid
-  for (int i = 0; i < columnCount; i++)
-  {
-    for (int j = 0; j < rowCount; j++)
-    {
-      // Draw card
-      DrawCard(shown.get(cardIndex++), gridX, gridY);
-      grid.add(new int[] {gridX, gridY});
-      
-      // Per row: increment Y
-      gridY += CARD_HEIGHT + GRID_GAP_Y;
-    }
-    // Per column: increment X and reset Y
-    gridX += CARD_WIDTH + GRID_GAP_X;
-    gridY = gridStartingY;
-  }
-  
-  // Return the grid for checking which card gets clicked on
-  return grid;
-}
-
 void DrawCard(int index, int cardX, int cardY)
 {
   int shapeCount = CARD_NUMBERS.get(numbers[index]);

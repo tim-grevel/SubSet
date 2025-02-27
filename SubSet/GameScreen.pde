@@ -1,7 +1,7 @@
 void DrawGameScreen()
 {
   background(BACKGROUND_COLOR);
-  gameGrid = DrawCards(GRID_ROWS, shown.size() / GRID_ROWS);
+  gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS);
   if (playOrder.size() + TotalSetsInList(shown) == 0)
   {
     DrawBackButton(true);
@@ -22,26 +22,6 @@ void GameScreenMousePressed()
   else
   {
     HandleCardSelection();
-  }
-}
-
-void StartGame()
-{
-  ResetGame();
-  SetPlayOrder();
-  TakeFromPile(12);
-  DrawGameScreen();
-}
-
-void ResetGame()
-{
-  score = 0;
-  shown.clear();
-  selected.clear();
-  
-  for (int i = 0; i < used.length; i++)
-  {
-    used[i] = false;
   }
 }
 
