@@ -7,10 +7,10 @@ void DrawTitleScreen()
 void TitleScreenMousePressed()
 {
   if (DrawStartButton(false))
-   {
-      SetScreen(GAME_SCREEN);
-      StartGame();
-   }
+  {
+    SetScreen(GAME_SCREEN);
+    StartGame();
+  }
 }
 
 void DrawTitle()
