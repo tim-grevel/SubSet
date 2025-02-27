@@ -36,22 +36,6 @@ void ResetGame()
   }
 }
 
-void SetScreen(int newScreen)
-{
-  background(BACKGROUND_COLOR);
-  currentScreen = newScreen;
-  
-  // Handle initial drawing of on-screen elements
-  switch (newScreen)
-  {
-    case TITLE_SCREEN:
-      DrawTitleScreen();
-      break;
-    case GAME_SCREEN:
-      break;
-  }
-}
-
 void SetPlayOrder()
 {
   // Ensure playOrder is initialized

@@ -8,7 +8,7 @@ void TitleScreenMousePressed()
 {
   if (DrawStartButton(false))
   {
-    SetScreen(GAME_SCREEN);
+    currentScreen = GAME_SCREEN;
     StartGame();
   }
 }

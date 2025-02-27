@@ -7,14 +7,22 @@ void setup()
 {
   InitializeCards();
   
-  background(BACKGROUND_COLOR);
-  
-  DrawTitleScreen();
+  currentScreen = TITLE_SCREEN;
 }
 
 void draw()
-{  
+{
+  background(BACKGROUND_COLOR);
 
+  switch(currentScreen)
+  {
+   case TITLE_SCREEN:
+     DrawTitleScreen();
+   break;
+   case GAME_SCREEN:
+     DrawGameScreen();
+   break;
+  }
 }
 
 void mousePressed()
