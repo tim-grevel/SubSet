@@ -25,26 +25,6 @@ void GameScreenMousePressed()
   }
 }
 
-void StartGame()
-{
-  ResetGame();
-  SetPlayOrder();
-  TakeFromPile(12);
-  DrawGameScreen();
-}
-
-void ResetGame()
-{
-  score = 0;
-  shown.clear();
-  selected.clear();
-  
-  for (int i = 0; i < used.length; i++)
-  {
-    used[i] = false;
-  }
-}
-
 void DrawStats()
 {
   fill(255);

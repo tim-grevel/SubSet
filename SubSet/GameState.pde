@@ -15,3 +15,23 @@ int score = 0;
 
 // Keeps track of the current screen the user is on
 int currentScreen = TITLE_SCREEN;
+
+void StartGame()
+{
+  ResetGame();
+  SetPlayOrder();
+  TakeFromPile(12);
+  DrawGameScreen();
+}
+
+void ResetGame()
+{
+  score = 0;
+  shown.clear();
+  selected.clear();
+  
+  for (int i = 0; i < used.length; i++)
+  {
+    used[i] = false;
+  }
+}
