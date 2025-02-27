@@ -35,3 +35,34 @@ void ResetGame()
     used[i] = false;
   }
 }
+
+void SetScreen(int newScreen)
+{
+  background(BACKGROUND_COLOR);
+  currentScreen = newScreen;
+  
+  // Handle initial drawing of on-screen elements
+  switch (newScreen)
+  {
+    case TITLE_SCREEN:
+      DrawTitleScreen();
+      break;
+    case GAME_SCREEN:
+      break;
+  }
+}
+
+void SetPlayOrder()
+{
+  // Ensure playOrder is initialized
+  playOrder = new IntList();
+  
+  // Add index for every card
+  for (int i = 0; i < 81; i++)
+  {
+    playOrder.append(i);
+  }
+  
+  // Shuffle to create random card dealing order
+  playOrder.shuffle();
+}

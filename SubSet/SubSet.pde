@@ -9,7 +9,7 @@ void setup()
   
   background(BACKGROUND_COLOR);
   
-  DrawScreen(TITLE_SCREEN);
+  DrawTitleScreen();
 }
 
 void draw()

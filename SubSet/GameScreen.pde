@@ -1,7 +1,7 @@
 void DrawGameScreen()
 {
   background(BACKGROUND_COLOR);
-  gameGrid = DrawCards(GRID_ROWS, shown.size() / GRID_ROWS);
+  gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS);
   if (playOrder.size() + TotalSetsInList(shown) == 0)
   {
     DrawBackButton(true);
