@@ -28,13 +28,19 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
 {
   ArrayList<int[]> grid = new ArrayList<int[]>();
   
+  // Declare card properties
+  int cardWidth = width / 12;
+  int cardHeight = int(cardWidth * 1.56);
+  int cardGap = (cardWidth + cardHeight) / 20;
+  
   // Calculate position of top left card
-  int gridStartingX = (width - CARD_WIDTH * columnCount - GRID_GAP_X * (columnCount - 1)) / 2 + CARD_WIDTH / 2;
-  int gridStartingY = 0 + CARD_HEIGHT / 2;
+  int gridStartingX = (width - cardWidth * columnCount - GRID_GAP * (columnCount - 1)) / 2 + cardWidth / 2;
+  int gridStartingY = cardGap + cardHeight / 2;
   
   // Declare new variables for incrementing
   int gridX = gridStartingX;
   int gridY = gridStartingY;
+
   int cardIndex = 0;
   
   // Draw card on each position in the grid
@@ -43,14 +49,14 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
     for (int j = 0; j < rowCount; j++)
     {
       // Draw card
-      DrawCard(cards.get(cardIndex++), gridX, gridY);
+      DrawCard(cards.get(cardIndex++), gridX, gridY, cardWidth, cardHeight);
       grid.add(new int[] {gridX, gridY});
       
       // Per row: increment Y
-      gridY += CARD_HEIGHT + GRID_GAP_Y;
+      gridY += cardHeight + cardGap;
     }
     // Per column: increment X and reset Y
-    gridX += CARD_WIDTH + GRID_GAP_X;
+    gridX += cardWidth + cardGap;
     gridY = gridStartingY;
   }
   
