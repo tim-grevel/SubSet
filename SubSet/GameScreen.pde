@@ -3,7 +3,6 @@ void DrawGameScreen()
   gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS, CARD_WIDTH, CARD_HEIGHT);
 
   DrawDrawButton(true);
-  DrawHintButton(true);
   DrawStats();
 
   if (GameIsOver())
