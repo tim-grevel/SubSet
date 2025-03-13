@@ -34,30 +34,30 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
   int cardGap = (cardWidth + cardHeight) / 20;
   
   // Calculate position of top left card
-  int gridStartingX = (width - cardWidth * columnCount - GRID_GAP * (columnCount - 1)) / 2 + cardWidth / 2;
+  int gridStartingX = (width - cardWidth * columnCount - cardGap * (columnCount - 1)) / 2 + cardWidth / 2;
   int gridStartingY = cardGap + cardHeight / 2;
   
   // Declare new variables for incrementing
-  int gridX = gridStartingX;
-  int gridY = gridStartingY;
+  int cardX = gridStartingX;
+  int cardY = gridStartingY;
 
   int cardIndex = 0;
-  
+    
   // Draw card on each position in the grid
   for (int i = 0; i < columnCount; i++)
   {
     for (int j = 0; j < rowCount; j++)
     {
       // Draw card
-      DrawCard(cards.get(cardIndex++), gridX, gridY, cardWidth, cardHeight);
-      grid.add(new int[] {gridX, gridY});
+      DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight);
+      grid.add(new int[] {cardX, cardY});
       
       // Per row: increment Y
-      gridY += cardHeight + cardGap;
+      cardY += cardHeight + cardGap;
     }
     // Per column: increment X and reset Y
-    gridX += cardWidth + cardGap;
-    gridY = gridStartingY;
+    cardX += cardWidth + cardGap;
+    cardY = gridStartingY;
   }
   
   // Return the grid for checking which card gets clicked on
