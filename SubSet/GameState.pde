@@ -29,7 +29,7 @@ void ResetGame()
   score = 0;
   shown.clear();
   selected.clear();
-  
+
   for (int i = 0; i < used.length; i++)
   {
     used[i] = false;
@@ -40,13 +40,13 @@ void SetPlayOrder()
 {
   // Ensure playOrder is initialized
   playOrder = new IntList();
-  
+
   // Add index for every card
   for (int i = 0; i < 81; i++)
   {
     playOrder.append(i);
   }
-  
+
   // Shuffle to create random card dealing order
   playOrder.shuffle();
 }

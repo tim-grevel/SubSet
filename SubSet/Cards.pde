@@ -12,7 +12,7 @@ void InitializeCards()
 void TakeFromPile(int amount)
 {
   if (shown.size() + amount > 21) return;
-  
+
   while (amount > 0)
   {
     if (playOrder.size() == 0) return;
@@ -27,22 +27,22 @@ void TakeFromPile(int amount)
 ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
 {
   ArrayList<int[]> grid = new ArrayList<int[]>();
-  
+
   // Declare card properties
   int cardWidth = width / 12;
   int cardHeight = int(cardWidth * 1.56);
   int cardGap = (cardWidth + cardHeight) / 20;
-  
+
   // Calculate position of top left card
   int gridStartingX = (width - cardWidth * columnCount - cardGap * (columnCount - 1)) / 2 + cardWidth / 2;
   int gridStartingY = cardGap + cardHeight / 2;
-  
+
   // Declare new variables for incrementing
   int cardX = gridStartingX;
   int cardY = gridStartingY;
 
   int cardIndex = 0;
-    
+
   // Draw card on each position in the grid
   for (int i = 0; i < columnCount; i++)
   {
@@ -51,7 +51,7 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
       // Draw card
       DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight);
       grid.add(new int[] {cardX, cardY});
-      
+
       // Per row: increment Y
       cardY += cardHeight + cardGap;
     }
@@ -59,7 +59,7 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
     cardX += cardWidth + cardGap;
     cardY = gridStartingY;
   }
-  
+
   // Return the grid for checking which card gets clicked on
   return grid;
 }
@@ -67,10 +67,10 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
 boolean CardsAreSet(int card1, int card2, int card3)
 {
   // If any of the attributes are not all the same or all different, the cards are not a set
-  if (!AttributesAreSet(numbers  , card1, card2, card3)) return false;
-  if (!AttributesAreSet(colors   , card1, card2, card3)) return false;
+  if (!AttributesAreSet(numbers, card1, card2, card3)) return false;
+  if (!AttributesAreSet(colors, card1, card2, card3)) return false;
   if (!AttributesAreSet(opacities, card1, card2, card3)) return false;
-  if (!AttributesAreSet(shapes   , card1, card2, card3)) return false;
+  if (!AttributesAreSet(shapes, card1, card2, card3)) return false;
   return true;
 }
 

@@ -17,8 +17,7 @@ void GameScreenMousePressed()
     {
       currentScreen = TITLE_SCREEN;
     }
-  }
-  else
+  } else
   {
     HandleCardSelection(gameGrid, CARD_WIDTH, CARD_HEIGHT);
   }
@@ -28,10 +27,10 @@ void DrawStats()
 {
   fill(255);
   textSize(50);
-  
+
   textAlign(LEFT, BOTTOM);
   text("Score: " + score, 20, height - 20);
-  
+
   textAlign(RIGHT, BOTTOM);
   text(TotalSetsInList(shown) + " sets on screen", width - 20, height - 20);
 }
@@ -48,11 +47,11 @@ boolean DrawBackButton(boolean renderButton)
   int buttonY = height - buttonHeight / 2;
   int buttonRadius = 0;
   int buttonColor = #555555;
-  
+
   if (renderButton)
   {
     DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
   }
-  
+
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
