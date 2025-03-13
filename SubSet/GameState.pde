@@ -11,7 +11,8 @@ IntList playOrder = new IntList();
 
 ArrayList<int[]> gameGrid = new ArrayList<int[]>();
 
-int score = 0;
+int turnCounter = 0;
+int[] playerScores = new int[2];
 
 // Keeps track of the current screen the user is on
 int currentScreen = TITLE_SCREEN;
@@ -26,10 +27,16 @@ void StartGame()
 
 void ResetGame()
 {
-  score = 0;
   shown.clear();
   selected.clear();
 
+  // Clear scores
+  for (int i = 0; i < playerScores.length; i++)
+  {
+    playerScores[i] = 0;
+  }
+
+  // Clear used cards
   for (int i = 0; i < used.length; i++)
   {
     used[i] = false;
@@ -49,4 +56,9 @@ void SetPlayOrder()
 
   // Shuffle to create random card dealing order
   playOrder.shuffle();
+}
+
+int GetCurrentTurn()
+{
+  return turnCounter % playerScores.length;
 }
