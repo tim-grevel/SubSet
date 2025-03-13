@@ -1,4 +1,5 @@
-void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
+// Returns whether a set is selected
+boolean HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
 {
   int cardX, cardY;
 
@@ -18,19 +19,10 @@ void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
         selected.append(shown.get(i));
         if (selected.size() == 3)
         {
-          if (CardsAreSet(selected.get(0), selected.get(1), selected.get(2)))
-          {
-            score++;
-
-            for (int card : selected)
-            {
-              shown.removeValue(card);
-            }
-          }
-
-          selected.clear();
+          return true;
         }
       }
     }
   }
+  return false;
 }
