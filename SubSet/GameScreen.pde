@@ -27,12 +27,17 @@ void DrawStats()
 {
   fill(255);
   textSize(50);
+  
+  int textY = height - 20;
 
   textAlign(LEFT, BOTTOM);
-  text("Score: " + score, 20, height - 20);
+  text("Score: " + score, 20, textY);
+
+  textAlign(CENTER, BOTTOM);
+  text(playOrder.size() + " cards left", width / 2, textY);
 
   textAlign(RIGHT, BOTTOM);
-  text(TotalSetsInList(shown) + " sets on screen", width - 20, height - 20);
+  text(TotalSetsInList(shown) + " sets on screen", width - 20, textY);
 }
 
 // Return whether the mouse is on the button
