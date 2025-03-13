@@ -1,14 +1,14 @@
-void HandleCardSelection()
+void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
 {
   int cardX, cardY;
   
-  for (int i = 0; i < gameGrid.size(); i++)
+  for (int i = 0; i < grid.size(); i++)
   {
-    int[] coordinate = gameGrid.get(i);
+    int[] coordinate = grid.get(i);
     cardX = coordinate[0];
     cardY = coordinate[1];
 
-    if (MouseOnRect(cardX, cardY, CARD_WIDTH, CARD_HEIGHT))
+    if (MouseOnRect(cardX, cardY, cardWidth, cardHeight))
     {
       if (selected.hasValue(shown.get(i)))
       {
@@ -34,6 +34,4 @@ void HandleCardSelection()
       }
     }
   }
-  
-  DrawGameScreen();
 }

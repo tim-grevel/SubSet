@@ -20,7 +20,7 @@ void GameScreenMousePressed()
   }
   else
   {
-    HandleCardSelection();
+    HandleCardSelection(gameGrid, CARD_WIDTH, CARD_HEIGHT);
   }
 }
 
