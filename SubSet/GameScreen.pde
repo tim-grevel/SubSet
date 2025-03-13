@@ -31,10 +31,6 @@ void GameScreenMousePressed()
       TakeFromPile(3);
     }
 
-    if (DrawHintButton(false))
-    {
-      //
-    }
   }
 }
 
@@ -130,26 +126,7 @@ boolean DrawDrawButton(boolean renderButton)
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
-// Returns whether the mouse is on the button
-boolean DrawHintButton(boolean renderButton)
-{
-  String startText = "Hint";
-  int textSize = 30;
-  int textColor = #FFFFFF;
-  int buttonWidth = 200;
-  int buttonHeight = 50;
-  int buttonX = width - buttonWidth / 2;
-  int buttonY = height - 100 - buttonHeight / 2;
-  int buttonRadius = 0;
-  int buttonColor = #555555;
 
-  if (renderButton)
-  {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
-  }
-
-  return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
-}
 
 void DrawWinner()
 {
