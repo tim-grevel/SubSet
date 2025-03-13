@@ -62,3 +62,8 @@ int GetCurrentTurn()
 {
   return turnCounter % playerScores.length;
 }
+
+boolean GameIsOver()
+{
+  return playOrder.size() + TotalSetsInList(shown) == 0;
+}
