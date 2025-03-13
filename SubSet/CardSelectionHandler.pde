@@ -1,7 +1,7 @@
 void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
 {
   int cardX, cardY;
-  
+
   for (int i = 0; i < grid.size(); i++)
   {
     int[] coordinate = grid.get(i);
@@ -13,8 +13,7 @@ void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
       if (selected.hasValue(shown.get(i)))
       {
         selected.removeValue(shown.get(i));
-      }
-      else
+      } else
       {
         selected.append(shown.get(i));
         if (selected.size() == 3)
@@ -22,13 +21,13 @@ void HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
           if (CardsAreSet(selected.get(0), selected.get(1), selected.get(2)))
           {
             score++;
-            
+
             for (int card : selected)
             {
               shown.removeValue(card);
             }
           }
-          
+
           selected.clear();
         }
       }

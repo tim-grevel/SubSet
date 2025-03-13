@@ -20,7 +20,7 @@ void DrawTitle()
   int titleY = 100;
   int titleSize = 80;
   int titleColor = #BB00BB; // Purple~ish
-  
+
   DrawText(titleText, titleX, titleY, CENTER, CENTER, titleSize, titleColor);
 }
 
@@ -36,11 +36,11 @@ boolean DrawStartButton(boolean renderButton)
   int buttonHeight = 100;
   int buttonRadius = 0;
   int buttonColor = #555555;
-  
+
   if (renderButton)
   {
     DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
   }
-  
+
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
