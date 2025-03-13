@@ -24,13 +24,11 @@ void TakeFromPile(int amount)
 }
 
 // This method draws all on-screen cards in a grid
-ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount)
+ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int cardWidth, int cardHeight)
 {
   ArrayList<int[]> grid = new ArrayList<int[]>();
 
   // Declare card properties
-  int cardWidth = width / 12;
-  int cardHeight = int(cardWidth * 1.56);
   int cardGap = (cardWidth + cardHeight) / 20;
 
   // Calculate position of top left card
