@@ -29,6 +29,7 @@ void GameScreenMousePressed()
     if (DrawTakeButton(false))
     {
       TakeFromPile(3);
+      hints.clear();
     }
     if (DrawHintButton(false))
     {
@@ -59,6 +60,7 @@ void HandleSetSelection()
     }
 
     selected.clear();
+    hints.clear();
     turnCounter++;
   }
 }
