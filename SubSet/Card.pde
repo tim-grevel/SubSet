@@ -6,7 +6,7 @@ void DrawCard(int cardIndex, int cardX, int cardY, int cardWidth, int cardHeight
 
   // Draw card base
   int cardBaseColor = isSelected ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR;
-  int cardStrokeColor = isHint ? #FF0000 : CARD_BASE_COLOR;
+  int cardStrokeColor = isHint ? #FF0000 : isSelected ? CARD_SELECTED_BASE_COLOR : CARD_BASE_COLOR;
   DrawRectangle(CENTER, cardX, cardY, cardWidth, cardHeight, CARD_RADIUS, cardBaseColor, 255, cardStrokeColor, 4);
 
   // Set color and opacity for shapes
