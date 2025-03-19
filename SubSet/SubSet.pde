@@ -1,3 +1,17 @@
+// Screen
+final int SCREEN_WIDTH = 1600;
+final int SCREEN_HEIGHT = 900;
+
+final int TITLE_SCREEN = 0;
+final int GAME_SCREEN = 1;
+
+// Colors
+final int BACKGROUND_COLOR = #1E5C3A;
+final int BUTTON_COLOR = #01360e;
+final int RED = #FF0000;
+final int GREEN = #00FF00;
+final int PURPLE = #770077;
+
 void settings()
 {
   size(SCREEN_WIDTH, SCREEN_HEIGHT);

@@ -1,3 +1,7 @@
+final int GRID_ROWS = 3;
+final int CARD_WIDTH = SCREEN_WIDTH / 12;
+final int CARD_HEIGHT = int(CARD_WIDTH * 1.56);
+
 void DrawGameScreen()
 {
   gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS, CARD_WIDTH, CARD_HEIGHT, selected, hints);
