@@ -1,11 +1,3 @@
-void DrawText(String text, int textX, int textY, int alignX, int alignY, int textSize, int textColorRgb)
-{
-  textAlign(alignX, alignY);
-  textSize(textSize);
-  fill(textColorRgb);
-  text(text, textX, textY);
-}
-
 void DrawRectangle(int rectMode, int rectX, int rectY, int rectWidth, int rectHeight, int rectRadius, int rectColorRgb, int transparency, int strokeColorRgb, int strokeWeight)
 {
   rectMode(rectMode);
@@ -22,4 +14,12 @@ void DrawEllipse(int ellipseMode, int ellipseX, int ellipseY, int ellipseWidth, 
   stroke(strokeColorRgb);
   strokeWeight(strokeWeight);
   ellipse(ellipseX, ellipseY, ellipseWidth, ellipseHeight);
+}
+
+void DrawText(String text, int textX, int textY, int alignX, int alignY, int textSize, int textColorRgb)
+{
+  textAlign(alignX, alignY);
+  textSize(textSize);
+  fill(textColorRgb);
+  text(text, textX, textY);
 }
