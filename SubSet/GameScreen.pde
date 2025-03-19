@@ -98,17 +98,18 @@ boolean DrawBackButton(boolean renderButton)
 {
   String startText = "Back to title";
   int textSize = 30;
-  int textColor = #FFFFFF;
   int buttonWidth = 200;
   int buttonHeight = 100;
   int buttonX = width / 2;
   int buttonY = height - buttonHeight / 2;
   int buttonRadius = 0;
-  int buttonColor = #555555;
+  int textColor = 255;
+  int buttonColor = BUTTON_COLOR;
+  int strokeColor = 0;
 
   if (renderButton)
   {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
   }
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
@@ -119,17 +120,18 @@ boolean DrawTakeButton(boolean renderButton)
 {
   String startText = "Draw 3";
   int textSize = 30;
-  int textColor = #FFFFFF;
   int buttonWidth = 200;
   int buttonHeight = 50;
   int buttonX = width / 2;
   int buttonY = height - 100 - buttonHeight / 2;
   int buttonRadius = 0;
-  int buttonColor = #555555;
+  int textColor = 255;
+  int buttonColor = BUTTON_COLOR;
+  int strokeColor = 0;
 
   if (renderButton)
   {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
   }
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
@@ -140,17 +142,18 @@ boolean DrawHintButton(boolean renderButton)
 {
   String startText = "Hint";
   int textSize = 30;
-  int textColor = #FFFFFF;
   int buttonWidth = 200;
   int buttonHeight = 50;
   int buttonX = width - buttonWidth / 2;
   int buttonY = height - 100 - buttonHeight / 2;
   int buttonRadius = 0;
-  int buttonColor = #555555;
+  int textColor = 255;
+  int buttonColor = BUTTON_COLOR;
+  int strokeColor = 0;
 
   if (renderButton)
   {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
   }
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);

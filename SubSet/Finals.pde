@@ -2,6 +2,7 @@
 final int SCREEN_WIDTH = 1600;
 final int SCREEN_HEIGHT = 900;
 final int BACKGROUND_COLOR = #1E5C3A;
+final int BUTTON_COLOR = #01360e;
 
 final int TITLE_SCREEN = 0;
 final int GAME_SCREEN = 1;
@@ -10,6 +11,11 @@ final int GAME_SCREEN = 1;
 final int GRID_ROWS = 3;
 
 final int GRID_GAP = 20;
+
+// Colors
+final int RED = #FF0000;
+final int GREEN = #00FF00;
+final int PURPLE = #770077;
 
 // Card
 final int CARD_WIDTH = SCREEN_WIDTH / 12;
@@ -22,7 +28,7 @@ final int CARD_BASE_COLOR = 255;
 final int CARD_SELECTED_BASE_COLOR = 180;
 
 final IntList CARD_NUMBERS = new IntList(1, 2, 3);
-final IntList CARD_COLORS = new IntList(#FF0000, #00FF00, #770077);
+final IntList CARD_COLORS = new IntList(RED, GREEN, PURPLE);
 final IntList CARD_OPACITIES = new IntList(255, 100, 0);
 
 // Shape
