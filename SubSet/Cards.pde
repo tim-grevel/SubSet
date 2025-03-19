@@ -24,7 +24,7 @@ void TakeFromPile(int amount)
 }
 
 // This method draws all on-screen cards in a grid
-ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int cardWidth, int cardHeight)
+ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int cardWidth, int cardHeight, IntList selectedCards, IntList hintCards)
 {
   ArrayList<int[]> grid = new ArrayList<int[]>();
 
@@ -46,8 +46,11 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int car
   {
     for (int j = 0; j < rowCount; j++)
     {
+      boolean isSelected = selectedCards.hasValue(cards.get(cardIndex));
+      boolean isHint = hintCards.hasValue(cards.get(cardIndex));
+      
       // Draw card
-      DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight);
+      DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight, isSelected, isHint);
       grid.add(new int[] {cardX, cardY});
 
       // Per row: increment Y
@@ -77,18 +80,25 @@ boolean AttributesAreSet(int[] attributeValues, int card1, int card2, int card3)
   return ((attributeValues[card1] + attributeValues[card2] + attributeValues[card3]) % 3 == 0);
 }
 
-int TotalSetsInList(IntList cards)
+ArrayList<int[]> GetAllSetsInList(IntList cards)
 {
-  int count = 0;
+  // Declare and initialize eventual output
+  ArrayList<int[]> sets = new ArrayList<int[]>();
+  
+  // Loop over every possible combination of three cards within the given cards
   for (int i = 0; i < cards.size(); i++)
   {
     for (int j = i + 1; j < cards.size(); j++)
     {
       for (int k = j + 1; k < cards.size(); k++)
       {
-        if (CardsAreSet(cards.get(i), cards.get(j), cards.get(k))) count++;
+        if (CardsAreSet(cards.get(i), cards.get(j), cards.get(k)))
+        {
+          sets.add(new int[] {cards.get(i), cards.get(j), cards.get(k)});
+        }
       }
     }
   }
-  return count;
+  
+  return sets;
 }

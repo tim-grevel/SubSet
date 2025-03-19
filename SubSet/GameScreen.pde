@@ -1,8 +1,9 @@
 void DrawGameScreen()
 {
-  gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS, CARD_WIDTH, CARD_HEIGHT);
+  gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS, CARD_WIDTH, CARD_HEIGHT, selected, hints);
 
-  DrawDrawButton(true);
+  DrawTakeButton(true);
+  DrawHintButton(true);
   DrawStats();
 
   if (GameIsOver())
@@ -25,11 +26,18 @@ void GameScreenMousePressed()
   {
     HandleSetSelection();
 
-    if (DrawDrawButton(false))
+    if (DrawTakeButton(false))
     {
       TakeFromPile(3);
     }
-
+    if (DrawHintButton(false))
+    {
+      var sets = GetAllSetsInList(shown);
+      if (sets.size() > 0)
+      {
+        ShowHint(sets.get(0));
+      }
+    }
   }
 }
 
@@ -63,7 +71,7 @@ void DrawStats()
   int textY = height - 20;
 
   textAlign(RIGHT, BOTTOM);
-  text(TotalSetsInList(shown) + " sets on screen", width - 20, textY);
+  text(GetAllSetsInList(shown).size() + " sets on screen", width - 20, textY);
 
   textAlign(CENTER, BOTTOM);
   text(playOrder.size() + " cards left", width / 2, textY);
@@ -105,7 +113,7 @@ boolean DrawBackButton(boolean renderButton)
 }
 
 // Returns whether the mouse is on the button
-boolean DrawDrawButton(boolean renderButton)
+boolean DrawTakeButton(boolean renderButton)
 {
   String startText = "Draw 3";
   int textSize = 30;
@@ -125,7 +133,26 @@ boolean DrawDrawButton(boolean renderButton)
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
+// Returns whether the mouse is on the button
+boolean DrawHintButton(boolean renderButton)
+{
+  String startText = "Hint";
+  int textSize = 30;
+  int textColor = #FFFFFF;
+  int buttonWidth = 200;
+  int buttonHeight = 50;
+  int buttonX = width - buttonWidth / 2;
+  int buttonY = height - 100 - buttonHeight / 2;
+  int buttonRadius = 0;
+  int buttonColor = #555555;
 
+  if (renderButton)
+  {
+    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, 4);
+  }
+
+  return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
+}
 
 void DrawWinner()
 {
@@ -133,13 +160,14 @@ void DrawWinner()
   int y = height / 2;
   int rectWidth = 300;
   int rectHeight = 50;
+  int rectColor = 0;
   int alignment = CENTER;
 
   int winner = playerScores[0] > playerScores[1] ? 1 : 2;
 
   String winText = "Player"  + winner + " wins!";
 
-  DrawRectangle(alignment, x, y, rectWidth, rectHeight, 0, #000000, 255, 0);
+  DrawRectangle(alignment, x, y, rectWidth, rectHeight, 0, rectColor, 255, rectColor, 0);
 
   DrawText(winText, x, y, alignment, alignment, 30, #FFFFFF);
 }
