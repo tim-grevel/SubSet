@@ -8,8 +8,11 @@ boolean[] used = new boolean[81];
 IntList shown = new IntList();
 IntList selected = new IntList();
 IntList playOrder = new IntList();
+IntList hints = new IntList();
 
 ArrayList<int[]> gameGrid = new ArrayList<int[]>();
+
+ArrayList<int[]> setsFound = new ArrayList<int[]>();
 
 int turnCounter = 0;
 int[] playerScores = new int[2];
@@ -65,5 +68,5 @@ int GetCurrentTurn()
 
 boolean GameIsOver()
 {
-  return playOrder.size() + TotalSetsInList(shown) == 0;
+  return playOrder.size() + GetAllSetsInList(shown).size() == 0;
 }
