@@ -8,7 +8,7 @@ void DrawShape(int shape, int shapeX, int shapeY, int shapeWidth, int shapeHeigh
     break;
   case 1:
     rectMode(CENTER);
-    rect(shapeX, shapeY, shapeWidth, shapeHeight, shapeHeight / 2);
+    ellipse(shapeX, shapeY, shapeWidth, shapeHeight);
     break;
   case 2:
     quad(
