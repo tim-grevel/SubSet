@@ -1,7 +1,7 @@
 // Screen
 final int SCREEN_WIDTH = 1600;
 final int SCREEN_HEIGHT = 900;
-final int BACKGROUND_COLOR = #333333;
+final int BACKGROUND_COLOR = #1E5C3A;
 
 final int TITLE_SCREEN = 0;
 final int GAME_SCREEN = 1;
