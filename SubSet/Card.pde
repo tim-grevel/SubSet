@@ -1,3 +1,13 @@
+final IntList CARD_NUMBERS = new IntList(1, 2, 3);
+final IntList CARD_COLORS = new IntList(RED, GREEN, PURPLE);
+final IntList CARD_OPACITIES = new IntList(255, 100, 0);
+
+final int CARD_BASE_COLOR = 255;
+final int CARD_SELECTED_BASE_COLOR = 180;
+final int CARD_RADIUS = 10;
+
+final int SHAPE_BORDER_WEIGHT = 3;
+
 void DrawCard(int cardIndex, int cardX, int cardY, int cardWidth, int cardHeight, boolean isSelected, boolean isHint)
 {
   int shapeCount = CARD_NUMBERS.get(numbers[cardIndex]);
