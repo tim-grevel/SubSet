@@ -10,14 +10,9 @@ final int CARD_BASE_STROKE_WEIGHT = 4;
 
 final int SHAPE_STROKE_WEIGHT = 3;
 
-void DrawCard(int cardIndex, int cardX, int cardY, int cardWidth, int cardHeight, boolean isSelected, boolean isHint)
+void DrawCard(int cardX, int cardY, int cardWidth, int cardHeight, int cardNumber, int cardColor, int cardOpacity, int cardShape, boolean isSelected, boolean isHint)
 {
   DrawCardBase(cardX, cardY, cardWidth, cardHeight, isSelected, isHint);
-
-  int cardNumber = CARD_NUMBERS.get(numbers[cardIndex]);
-  int cardColor = CARD_COLORS.get(colors[cardIndex]);
-  int cardOpacity = CARD_OPACITIES.get(opacities[cardIndex]);
-  int cardShape = shapes[cardIndex];
 
   int shapeWidth = int(cardWidth / 1.5);
   int shapeHeight = cardHeight / 5;
