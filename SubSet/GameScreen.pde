@@ -6,23 +6,22 @@ void DrawGameScreen()
 {
   gameGrid = DrawCards(shown, GRID_ROWS, shown.size() / GRID_ROWS, CARD_WIDTH, CARD_HEIGHT, selected, hints);
 
-  DrawTakeButton(true);
-  DrawHintButton(true);
+  DrawTakeButton();
+  DrawHintButton();
   DrawStats();
 
   if (GameIsOver())
   {
-    DrawBackButton(true);
+    DrawBackButton();
     DrawWinner();
   }
 }
 
 void GameScreenMousePressed()
 {
-  // If there are no cards left in the pile and no sets left on screen, the game is over
   if (GameIsOver())
   {
-    if (DrawBackButton(false))
+    if (DrawBackButton())
     {
       currentScreen = TITLE_SCREEN;
     }
@@ -30,12 +29,12 @@ void GameScreenMousePressed()
   {
     HandleSetSelection();
 
-    if (DrawTakeButton(false))
+    if (DrawTakeButton())
     {
       TakeFromPile(3);
       hints.clear();
     }
-    if (DrawHintButton(false))
+    if (DrawHintButton())
     {
       var sets = GetAllSetsInList(shown);
       if (sets.size() > 0)
@@ -98,7 +97,7 @@ void DrawStats()
 }
 
 // Returns whether the mouse is on the button
-boolean DrawBackButton(boolean renderButton)
+boolean DrawBackButton()
 {
   String startText = "Back to title";
   int textSize = 30;
@@ -111,16 +110,13 @@ boolean DrawBackButton(boolean renderButton)
   int buttonColor = BUTTON_COLOR;
   int strokeColor = 0;
 
-  if (renderButton)
-  {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
-  }
+  DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
 // Returns whether the mouse is on the button
-boolean DrawTakeButton(boolean renderButton)
+boolean DrawTakeButton()
 {
   String startText = "Draw 3";
   int textSize = 30;
@@ -133,16 +129,13 @@ boolean DrawTakeButton(boolean renderButton)
   int buttonColor = BUTTON_COLOR;
   int strokeColor = 0;
 
-  if (renderButton)
-  {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
-  }
+  DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
 // Returns whether the mouse is on the button
-boolean DrawHintButton(boolean renderButton)
+boolean DrawHintButton()
 {
   String startText = "Hint";
   int textSize = 30;
@@ -155,10 +148,7 @@ boolean DrawHintButton(boolean renderButton)
   int buttonColor = BUTTON_COLOR;
   int strokeColor = 0;
 
-  if (renderButton)
-  {
-    DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
-  }
+  DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
 
   return MouseOnRect(buttonX, buttonY, buttonWidth, buttonHeight);
 }

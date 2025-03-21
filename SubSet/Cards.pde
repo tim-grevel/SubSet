@@ -1,3 +1,8 @@
+int[] numbers = new int[81];
+int[] colors = new int[81];
+int[] opacities = new int[81];
+int[] shapes = new int[81];
+
 void InitializeCards()
 {
   for (int i = 0; i < 81; i++)
@@ -46,11 +51,16 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int car
   {
     for (int j = 0; j < rowCount; j++)
     {
+      int cardNumber = CARD_NUMBERS.get(numbers[cardIndex]);
+      int cardColor = CARD_COLORS.get(colors[cardIndex]);
+      int cardOpacity = CARD_OPACITIES.get(opacities[cardIndex]);
+      int cardShape = shapes[cardIndex];
+
       boolean isSelected = selectedCards.hasValue(cards.get(cardIndex));
       boolean isHint = hintCards.hasValue(cards.get(cardIndex));
-      
+
       // Draw card
-      DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight, isSelected, isHint);
+      DrawCard(cardX, cardY, cardWidth, cardHeight, cardNumber, cardColor, cardOpacity, cardShape, isSelected, isHint);
       grid.add(new int[] {cardX, cardY});
 
       // Per row: increment Y
@@ -84,7 +94,7 @@ ArrayList<int[]> GetAllSetsInList(IntList cards)
 {
   // Declare and initialize eventual output
   ArrayList<int[]> sets = new ArrayList<int[]>();
-  
+
   // Loop over every possible combination of three cards within the given cards
   for (int i = 0; i < cards.size(); i++)
   {
@@ -99,6 +109,6 @@ ArrayList<int[]> GetAllSetsInList(IntList cards)
       }
     }
   }
-  
+
   return sets;
 }
