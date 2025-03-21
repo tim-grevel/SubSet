@@ -62,5 +62,6 @@ int GetCurrentTurn()
 
 boolean GameIsOver()
 {
+  // If there are no cards left in the pile and no sets left on screen, the game is over
   return playOrder.size() + GetAllSetsInList(shown).size() == 0;
 }

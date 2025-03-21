@@ -19,8 +19,3 @@ boolean MouseOnRect(int rectX, int rectY, int rectWidth, int rectHeight)
     && mouseY >= rectY - rectHeight / 2
     && mouseY <= rectY + rectHeight / 2;
 }
-
-boolean MouseOnEllipse(int ellipseX, int ellipseY, int ellipseDiameter)
-{
-  return (sqrt(sq(ellipseX - mouseX) + sq(ellipseY - mouseY)) < ellipseDiameter / 2);
-}
