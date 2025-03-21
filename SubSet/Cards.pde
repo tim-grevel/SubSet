@@ -48,7 +48,7 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int car
     {
       boolean isSelected = selectedCards.hasValue(cards.get(cardIndex));
       boolean isHint = hintCards.hasValue(cards.get(cardIndex));
-      
+
       // Draw card
       DrawCard(cards.get(cardIndex++), cardX, cardY, cardWidth, cardHeight, isSelected, isHint);
       grid.add(new int[] {cardX, cardY});
@@ -84,7 +84,7 @@ ArrayList<int[]> GetAllSetsInList(IntList cards)
 {
   // Declare and initialize eventual output
   ArrayList<int[]> sets = new ArrayList<int[]>();
-  
+
   // Loop over every possible combination of three cards within the given cards
   for (int i = 0; i < cards.size(); i++)
   {
@@ -99,6 +99,6 @@ ArrayList<int[]> GetAllSetsInList(IntList cards)
       }
     }
   }
-  
+
   return sets;
 }

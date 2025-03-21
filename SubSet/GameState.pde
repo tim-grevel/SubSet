@@ -3,7 +3,6 @@ int[] numbers = new int[81];
 int[] colors = new int[81];
 int[] opacities = new int[81];
 int[] shapes = new int[81];
-boolean[] used = new boolean[81];
 
 IntList shown = new IntList();
 IntList selected = new IntList();
@@ -11,8 +10,6 @@ IntList playOrder = new IntList();
 IntList hints = new IntList();
 
 ArrayList<int[]> gameGrid = new ArrayList<int[]>();
-
-ArrayList<int[]> setsFound = new ArrayList<int[]>();
 
 int turnCounter = 0;
 int[] playerScores = new int[2];
@@ -32,17 +29,14 @@ void ResetGame()
 {
   shown.clear();
   selected.clear();
+  ResetScores();
+}
 
-  // Clear scores
+void ResetScores()
+{
   for (int i = 0; i < playerScores.length; i++)
   {
     playerScores[i] = 0;
-  }
-
-  // Clear used cards
-  for (int i = 0; i < used.length; i++)
-  {
-    used[i] = false;
   }
 }
 
