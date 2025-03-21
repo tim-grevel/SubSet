@@ -51,17 +51,19 @@ ArrayList<int[]> DrawCards(IntList cards, int rowCount, int columnCount, int car
   {
     for (int j = 0; j < rowCount; j++)
     {
-      int cardNumber = CARD_NUMBERS.get(numbers[cardIndex]);
-      int cardColor = CARD_COLORS.get(colors[cardIndex]);
-      int cardOpacity = CARD_OPACITIES.get(opacities[cardIndex]);
-      int cardShape = shapes[cardIndex];
+      int card = cards.get(cardIndex);
+      int cardNumber = CARD_NUMBERS.get(numbers[card]);
+      int cardColor = CARD_COLORS.get(colors[card]);
+      int cardOpacity = CARD_OPACITIES.get(opacities[card]);
+      int cardShape = shapes[card];
 
-      boolean isSelected = selectedCards.hasValue(cards.get(cardIndex));
-      boolean isHint = hintCards.hasValue(cards.get(cardIndex));
+      boolean isSelected = selectedCards.hasValue(card);
+      boolean isHint = hintCards.hasValue(card);
 
       // Draw card
       DrawCard(cardX, cardY, cardWidth, cardHeight, cardNumber, cardColor, cardOpacity, cardShape, isSelected, isHint);
       grid.add(new int[] {cardX, cardY});
+      cardIndex++;
 
       // Per row: increment Y
       cardY += cardHeight + cardGap;
