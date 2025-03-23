@@ -1,3 +1,7 @@
+final int RED = #FF0000;
+final int GREEN = #00FF00;
+final int PURPLE = #770077;
+
 final IntList CARD_NUMBERS = new IntList(1, 2, 3);
 final IntList CARD_COLORS = new IntList(RED, GREEN, PURPLE);
 final IntList CARD_OPACITIES = new IntList(255, 100, 0);

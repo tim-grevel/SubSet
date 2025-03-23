@@ -8,9 +8,7 @@ final int GAME_SCREEN = 1;
 // Colors
 final int BACKGROUND_COLOR = #1E5C3A;
 final int BUTTON_COLOR = #01360e;
-final int RED = #FF0000;
-final int GREEN = #00FF00;
-final int PURPLE = #770077;
+
 
 void settings()
 {
