@@ -24,6 +24,7 @@ void ResetGame()
 {
   shown.clear();
   selected.clear();
+  hints.clear();
   ResetScores();
 }
 
