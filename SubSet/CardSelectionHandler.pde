@@ -1,39 +1,28 @@
-void HandleCardSelection()
+// Returns whether a set is selected
+boolean HandleCardSelection(ArrayList<int[]> grid, int cardWidth, int cardHeight)
 {
   int cardX, cardY;
-  
-  for (int i = 0; i < gameGrid.size(); i++)
+
+  for (int i = 0; i < grid.size(); i++)
   {
-    int[] coordinate = gameGrid.get(i);
+    int[] coordinate = grid.get(i);
     cardX = coordinate[0];
     cardY = coordinate[1];
 
-    if (MouseOnRect(cardX, cardY, CARD_WIDTH, CARD_HEIGHT))
+    if (MouseOnRect(cardX, cardY, cardWidth, cardHeight))
     {
       if (selected.hasValue(shown.get(i)))
       {
         selected.removeValue(shown.get(i));
-      }
-      else
+      } else
       {
         selected.append(shown.get(i));
         if (selected.size() == 3)
         {
-          if (CardsAreSet(selected.get(0), selected.get(1), selected.get(2)))
-          {
-            score++;
-            
-            for (int card : selected)
-            {
-              shown.removeValue(card);
-            }
-          }
-          
-          selected.clear();
+          return true;
         }
       }
     }
   }
-  
-  DrawGameScreen();
+  return false;
 }
