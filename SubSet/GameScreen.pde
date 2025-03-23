@@ -55,7 +55,7 @@ void HandleSetSelection()
     {
       playerScores[GetCurrentTurn()]++;
 
-      RemoveCards(selected);
+      RemoveCardsFromScreen(selected);
     }
 
     selected.clear();
@@ -64,7 +64,7 @@ void HandleSetSelection()
   }
 }
 
-void RemoveCards(IntList cards)
+void RemoveCardsFromScreen(IntList cards)
 {
   for (int card : cards)
   {
