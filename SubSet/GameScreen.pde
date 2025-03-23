@@ -55,16 +55,20 @@ void HandleSetSelection()
     {
       playerScores[GetCurrentTurn()]++;
 
-      // Remove the set from screen
-      for (int card : selected)
-      {
-        shown.removeValue(card);
-      }
+      RemoveCardsFromScreen(selected);
     }
 
     selected.clear();
     hints.clear();
     turnCounter++;
+  }
+}
+
+void RemoveCardsFromScreen(IntList cards)
+{
+  for (int card : cards)
+  {
+    shown.removeValue(card);
   }
 }
 
