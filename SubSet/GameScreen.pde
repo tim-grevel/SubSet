@@ -111,7 +111,7 @@ boolean DrawBackButton()
   int buttonY = height - buttonHeight / 2;
   int buttonRadius = 0;
   int textColor = 255;
-  int buttonColor = BUTTON_COLOR;
+  int buttonColor = #01360e;
   int strokeColor = 0;
 
   DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
@@ -130,7 +130,7 @@ boolean DrawTakeButton()
   int buttonY = height - 100 - buttonHeight / 2;
   int buttonRadius = 0;
   int textColor = 255;
-  int buttonColor = BUTTON_COLOR;
+  int buttonColor = #01360e;
   int strokeColor = 0;
 
   DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
@@ -149,7 +149,7 @@ boolean DrawHintButton()
   int buttonY = height - 100 - buttonHeight / 2;
   int buttonRadius = 0;
   int textColor = 255;
-  int buttonColor = BUTTON_COLOR;
+  int buttonColor = #01360e;
   int strokeColor = 0;
 
   DrawRectButton(startText, textSize, textColor, buttonX, buttonY, buttonWidth, buttonHeight, buttonRadius, buttonColor, 255, strokeColor, 4);
